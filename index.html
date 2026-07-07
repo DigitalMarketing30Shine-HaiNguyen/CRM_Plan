@@ -1,0 +1,2145 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plan CRM T7 · 2026 — 30Shine</title>
+
+<style>
+/* ═══ PLAN CSS ════════════════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#EEF2F8;--surf:#fff;--navy:#152C5E;--navy2:#1E408B;
+  --ink:#0b1120;--ink2:#344055;--muted:#6B7A94;--bdr:#D4DCE8;
+  --p1:#1A6B33;--p1b:#E7F3EB;--p1l:#0f4220;
+  --p2:#0B5FBF;--p2b:#E6F0FC;--p2l:#073d80;
+  --p3:#8A5A00;--p3b:#FBF2E1;--p3l:#5a3a00;
+  --p4:#5B3E8A;--p4b:#F0EAF8;--p4l:#3a2560;
+  --good:#1A6B33;--warn:#7A5C00;--red:#700000;--redb:#FDF0F0;
+}
+body{background:var(--bg);color:var(--ink);font:13.5px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;padding:0 0 60px;}
+a{color:inherit}
+
+/* ── PAGE HEADER ── */
+.phdr{background:var(--navy);color:#fff;padding:18px 28px 20px;}
+.phdr-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.phdr-left h1{font-size:18px;font-weight:800;letter-spacing:-.02em;}
+.phdr-left .sub{font-size:11px;opacity:.5;margin-top:3px;}
+.phdr-kpis{display:flex;gap:0;border-left:1px solid rgba(255,255,255,.12);}
+.kp{padding:4px 20px;border-right:1px solid rgba(255,255,255,.12);}
+.kp-l{font-size:9px;text-transform:uppercase;letter-spacing:.07em;opacity:.45;margin-bottom:3px;}
+.kp-v{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;}
+.kp-s{font-size:10px;opacity:.45;margin-top:2px;}
+.kp-v.grn{color:#5BE88A;} .kp-v.yel{color:#FFD166;}
+
+/* ── WRAP ── */
+.wrap{max-width:1180px;margin:0 auto;padding:22px 18px 0;}
+.section{margin-bottom:22px;}
+.section-label{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:8px;padding-left:2px;}
+
+/* ── PHILOSOPHY STRIP ── */
+.philo{background:var(--navy2);color:#fff;padding:13px 20px;border-radius:8px;font-size:12.5px;line-height:1.65;margin-bottom:20px;}
+.philo b{color:#8FE8A8;}
+
+/* ── P&L SUMMARY ── */
+.pnl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.pnl-card{background:var(--surf);border:1px solid var(--bdr);padding:14px 16px;border-radius:8px;}
+.pnl-card.hi{background:var(--navy);color:#fff;border-color:var(--navy);}
+.pnl-card .l{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px;}
+.pnl-card.hi .l{color:#8AACDE;}
+.pnl-card .v{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1;}
+.pnl-card .s{font-size:10px;color:var(--muted);margin-top:4px;}
+.pnl-card.hi .s{color:#8AACDE;}
+
+/* ── 4 PROGRAM CARDS ── */
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.prog-card{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;overflow:hidden;}
+.prog-card .pc-hdr{padding:14px 18px 12px;border-bottom:4px solid transparent;}
+.c1 .pc-hdr{border-bottom-color:var(--p1);} .c2 .pc-hdr{border-bottom-color:var(--p2);}
+.c3 .pc-hdr{border-bottom-color:var(--p3);} .c4 .pc-hdr{border-bottom-color:var(--p4);}
+.pc-label{font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;}
+.c1 .pc-label{color:var(--p1)} .c2 .pc-label{color:var(--p2)} .c3 .pc-label{color:var(--p3)} .c4 .pc-label{color:var(--p4)}
+.pc-title{font-size:18px;font-weight:800;letter-spacing:-.02em;}
+.pc-tagline{font-size:11.5px;color:var(--muted);margin-top:4px;font-style:italic;line-height:1.4;}
+.pc-body{padding:0 18px 16px;}
+.pc-row{display:flex;gap:10px;padding:8px 0;border-top:1px solid #EEF1F6;font-size:12px;}
+.pc-row:first-child{border-top:none;}
+.pc-k{flex:0 0 80px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding-top:1px;}
+.pc-v{flex:1;line-height:1.45;color:var(--ink2);}
+.pc-v b{color:var(--ink);}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:4px;vertical-align:middle;}
+.t-p1{background:var(--p1b);color:var(--p1l)} .t-p2{background:var(--p2b);color:var(--p2l)}
+.t-p3{background:var(--p3b);color:var(--p3l)} .t-p4{background:var(--p4b);color:var(--p4l)}
+.t-red{background:var(--redb);color:var(--red)} .t-ok{background:#E7F3EB;color:#0f4220}
+/* mini pnl inside card */
+.mini-pnl{background:#F8FAFD;border:1px solid var(--bdr);border-radius:6px;padding:10px 14px;margin-top:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.mp-item .ml{font-size:8.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);}
+.mp-item .mv{font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:1px;}
+.mv.grn{color:var(--p1)} .mv.yel{color:var(--warn)} .mv.red{color:var(--red)} .mv.blue{color:var(--p2)}
+
+/* ── FINANCIAL TABLE ── */
+.fin-tbl{width:100%;border-collapse:collapse;background:var(--surf);border-radius:8px;overflow:hidden;border:1px solid var(--bdr);}
+.fin-tbl thead tr{background:var(--navy);}
+.fin-tbl th{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#9DBDE8;font-weight:700;padding:8px 14px;text-align:left;white-space:nowrap;}
+.fin-tbl th.r{text-align:right}
+.fin-tbl td{padding:9px 14px;border-bottom:1px solid rgba(212,220,232,.4);font-size:12px;font-variant-numeric:tabular-nums;vertical-align:middle;}
+.fin-tbl td.r{text-align:right}
+.fin-tbl tr:last-child td{border-bottom:none;font-weight:700;background:#F8FAFD;}
+.prog-pip{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle;}
+.lbl-note{font-size:10px;color:var(--muted);font-style:italic;}
+
+/* ── SCHEDULE ── */
+.sched-wrap{overflow-x:auto;}
+.sched-tbl{border-collapse:collapse;min-width:780px;width:100%;font-size:11.5px;}
+.sched-tbl th{background:var(--navy);color:#9DBDE8;font-size:9px;text-transform:uppercase;letter-spacing:.06em;padding:7px 10px;text-align:center;white-space:nowrap;}
+.sched-tbl td{padding:5px 10px;border-bottom:1px solid rgba(212,220,232,.3);text-align:center;font-variant-numeric:tabular-nums;}
+.sched-tbl td.dlab{font-weight:700;text-align:left;color:var(--ink2);}
+.sched-tbl tr:last-child td{border-bottom:none;}
+.bar{display:inline-block;height:14px;border-radius:3px;min-width:4px;vertical-align:middle;}
+.s-note{font-size:10px;color:var(--muted);margin-top:5px;font-style:italic;}
+
+/* ── CONTENT CALENDAR ── */
+.cc-wrap{display:flex;flex-direction:column;gap:0;}
+.cc-row{display:grid;grid-template-columns:110px 110px 1fr;border-bottom:1px solid rgba(212,220,232,.4);font-size:12px;}
+.cc-row:last-child{border-bottom:none;}
+.cc-row.hdr{background:var(--navy);color:#9DBDE8;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+.cc-row.hdr .cc-cell{padding:8px 14px;}
+.cc-cell{padding:10px 14px;line-height:1.45;}
+.cc-cell.prep{background:rgba(238,242,248,.55);}
+.cc-cell.send{background:var(--surf);}
+.cc-date-prep{font-size:11px;font-weight:700;color:var(--ink2);}
+.cc-date-send{font-size:11px;font-weight:700;color:var(--navy2);}
+.cc-badge{display:inline-block;font-size:9px;font-weight:800;padding:1px 6px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;vertical-align:middle;}
+.cb-p1{background:var(--p1b);color:var(--p1l)} .cb-p2{background:var(--p2b);color:var(--p2l)}
+.cb-p3{background:var(--p3b);color:var(--p3l)} .cb-p4{background:var(--p4b);color:var(--p4l)}
+.cb-all{background:#EEF2F8;color:var(--navy2);}
+.cc-tmpl{font-size:11px;color:var(--ink2);background:#F8FAFD;border-left:3px solid var(--bdr);padding:5px 9px;margin-top:5px;font-style:italic;line-height:1.5;}
+.cc-tasks{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.cc-tasks li{font-size:11.5px;color:var(--ink2);padding-left:14px;position:relative;}
+.cc-tasks li::before{content:"→";position:absolute;left:0;color:var(--muted);}
+.cc-section-hdr{background:#F1F5FB;border-bottom:1px solid var(--bdr);padding:7px 14px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--navy2);grid-column:1/-1;}
+.cc-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.cg-box{border-radius:8px;padding:13px 15px;}
+.cg-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.cg-list{font-size:11.5px;line-height:1.65;}
+.msg-box{background:#F8FAFD;border-left:3px solid var(--bdr);padding:7px 10px;font-size:11px;color:var(--ink2);line-height:1.5;margin-top:5px;font-style:italic;}
+
+/* ── EVIDENCE TRACK ── */
+.ev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.ev-card{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:12px 14px;border-top:3px solid var(--bdr);}
+.ev-card.win{border-top-color:var(--p1);}
+.ev-card.fail{border-top-color:var(--red);}
+.ev-month{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:5px;}
+.ev-seg{font-size:11.5px;font-weight:700;color:var(--ink);line-height:1.3;}
+.ev-lift{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;margin:4px 0 2px;line-height:1;}
+.ev-lift.up{color:var(--p1)} .ev-lift.dn{color:var(--red)}
+.ev-note{font-size:10px;color:var(--muted);line-height:1.4;}
+/* ── CONFIDENCE BADGES ── */
+.cf{display:inline-block;font-size:8.5px;font-weight:800;padding:1px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;vertical-align:middle;margin-left:4px;}
+.cf-ok{background:#E7F3EB;color:#0f4220;}
+.cf-proj{background:#FBF2E1;color:#5a3a00;}
+.cf-test{background:#EEF2F8;color:var(--navy2);}
+/* ── GATES ── */
+.gates-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.gate-card{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:14px 16px;}
+.gate-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.gate-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.gate-title{font-size:12px;font-weight:800;color:var(--ink);}
+.gate-date{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-left:auto;}
+.gate-rows{display:flex;flex-direction:column;gap:6px;}
+.gate-row{font-size:11.5px;line-height:1.45;display:flex;gap:8px;}
+.gate-row .gl{flex:0 0 56px;font-size:9px;font-weight:800;text-transform:uppercase;color:var(--muted);padding-top:1px;}
+.gate-row .gv{flex:1;color:var(--ink2);}
+.gate-row .gv b{color:var(--ink);}
+/* ── F×R COVERAGE MATRIX ── */
+.mx-wrap{overflow-x:auto;}
+.mx-tbl{border-collapse:collapse;width:100%;min-width:760px;font-size:11.5px;}
+.mx-tbl th{background:var(--navy);color:#9DBDE8;font-size:9px;text-transform:uppercase;letter-spacing:.06em;padding:7px 12px;text-align:center;white-space:nowrap;}
+.mx-tbl th.mx-fth{text-align:left;width:80px;}
+.mx-tbl td{border:1px solid rgba(212,220,232,.5);padding:8px 10px;vertical-align:top;text-align:center;}
+.mx-fhdr{background:var(--navy);color:#fff;font-size:10px;font-weight:800;padding:8px 12px;white-space:nowrap;text-align:left!important;}
+.mx-fhdr span{display:block;font-size:9px;font-weight:400;opacity:.55;margin-top:1px;}
+.mx-prog{font-size:8.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+.mx-num{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1;}
+.mx-note{font-size:9.5px;color:var(--muted);margin-top:2px;line-height:1.3;}
+.mx-p1{background:var(--p1b);} .mx-p1 .mx-prog{color:var(--p1);}
+.mx-p2{background:var(--p2b);} .mx-p2 .mx-prog{color:var(--p2);}
+.mx-p3{background:var(--p3b);} .mx-p3 .mx-prog{color:var(--p3);}
+.mx-p4{background:var(--p4b);} .mx-p4 .mx-prog{color:var(--p4);}
+.mx-loai{background:#F4F6FA;} .mx-loai .mx-num{color:var(--muted);font-size:13px;} .mx-loai .mx-prog{color:var(--muted);}
+.mx-empty{background:#FEF2F2;border:2px dashed #E05252!important;position:relative;}
+.mx-empty .mx-prog{color:#C0392B;}
+.mx-empty .mx-num{color:#C0392B;}
+.mx-empty .mx-note{color:#B03030;}
+.mx-empty-badge{display:inline-block;font-size:8px;font-weight:800;background:#E05252;color:#fff;padding:1px 5px;border-radius:3px;letter-spacing:.03em;margin-bottom:3px;}
+.mx-add-badge{display:inline-block;font-size:8px;font-weight:800;padding:1px 5px;border-radius:3px;letter-spacing:.03em;margin-top:3px;}
+.mx-add-p1{background:var(--p1b);color:var(--p1);}
+.mx-add-p4{background:var(--p4b);color:var(--p4);}
+.mx-gap-box{background:#FEF9F0;border:1px solid #E8C86A;border-left:4px solid #D4A017;border-radius:8px;padding:12px 16px;margin-top:10px;font-size:12px;line-height:1.6;}
+.mx-gap-box b{color:var(--ink);}
+/* ── FOOTER ── */
+.foot{font-size:10.5px;color:var(--muted);border-top:1px solid var(--bdr);padding-top:14px;margin-top:24px;line-height:1.7;}
+.foot b{color:var(--ink2);}
+
+@media(max-width:860px){
+  .prog-grid,.pnl-grid,.rules-grid{grid-template-columns:1fr;}
+  .phdr-kpis{border-left:none;border-top:1px solid rgba(255,255,255,.12);padding-top:10px;flex-wrap:wrap;}
+  .mini-pnl{grid-template-columns:1fr 1fr;}
+}
+
+</style>
+
+<style>
+/* ═══ NAV + SHELL ══════════════════════════════════════════════ */
+html,body{margin:0;padding:0;}
+
+.top-nav{
+  position:sticky;top:0;z-index:200;
+  background:#0F1928;
+  display:flex;align-items:stretch;
+  border-bottom:1px solid #1E3050;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+.top-nav-brand{
+  padding:0 18px;display:flex;align-items:center;
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);border-right:1px solid #1E3050;white-space:nowrap;
+}
+.nav-tabs{display:flex;align-items:stretch;}
+.nav-tab{
+  padding:0 20px;border:none;background:transparent;
+  font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);cursor:pointer;position:relative;
+  height:44px;display:flex;align-items:center;gap:6px;
+  transition:color .15s;white-space:nowrap;
+}
+.nav-tab:hover{color:rgba(255,255,255,.7);}
+.nav-tab.active{color:#fff;}
+.nav-tab.active::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;border-radius:1px;
+}
+.tab-plan.active::after{background:#89B4F0;}
+.tab-cl.active::after{background:#5BE88A;}
+.tab-ct.active::after{background:#F0C97A;}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.55;flex-shrink:0;}
+.tab-plan .nav-dot{background:#89B4F0;}
+.tab-cl   .nav-dot{background:#5BE88A;}
+.tab-ct   .nav-dot{background:#F0C97A;}
+.nav-pill{
+  font-size:9px;font-variant-numeric:tabular-nums;
+  padding:1px 6px;border-radius:10px;letter-spacing:.03em;
+}
+.tab-cl .nav-pill{background:rgba(91,232,138,.15);color:#5BE88A;}
+
+#view-plan{background:#EEF2F8;min-height:calc(100vh - 44px);}
+#view-cl{min-height:calc(100vh - 44px);}
+#view-ct{min-height:calc(100vh - 44px);}
+</style>
+
+<style>
+/* ═══ CHECKLIST CSS (scoped) ═══════════════════════════════════ */
+
+#view-cl {
+  --bg:          #F6F7F9;
+  --surface:     #FFFFFF;
+  --surface-2:   #EFF1F5;
+  --border:      #DDE0E8;
+  --text-hi:     #0F1218;
+  --text-mid:    #525B70;
+  --text-lo:     #8A93A6;
+
+  --c-ban:       #B83A00;
+  --c-ban-bg:    #FFF1EC;
+  --c-check:     #124FA3;
+  --c-check-bg:  #EAF0FF;
+  --c-duyet:     #1A6B33;
+  --c-duyet-bg:  #EAF4EE;
+  --c-baocao:    #5C2FA0;
+  --c-baocao-bg: #F2EEFF;
+  --c-pre:       #7A5500;
+  --c-pre-bg:    #FFF8E5;
+
+  --p1: #1A6B33; --p1-bg: #E8F5EE;
+  --p2: #0B5FBF; --p2-bg: #E6EFFF;
+  --p3: #8A5A00; --p3-bg: #FFF5E5;
+  --p4: #5B3E8A; --p4-bg: #F2EDFF;
+
+  --r: 6px; --r-sm: 3px;
+  --shadow: 0 1px 4px rgba(0,0,0,.06), 0 0 0 1px var(--border);
+}
+
+@media (prefers-color-scheme: dark) { #view-cl {
+  --bg:          #0C0E14;
+  --surface:     #141820;
+  --surface-2:   #1B1F2A;
+  --border:      #272D3C;
+  --text-hi:     #E5E8F0;
+  --text-mid:    #8895AE;
+  --text-lo:     #525B70;
+  --c-ban:       #FF6A30; --c-ban-bg:    #220800;
+  --c-check:     #5A96FF; --c-check-bg:  #001030;
+  --c-duyet:     #48B86A; --c-duyet-bg:  #001A08;
+  --c-baocao:    #A874FF; --c-baocao-bg: #130025;
+  --c-pre:       #D9A030; --c-pre-bg:    #1A1000;
+  --p1: #48B86A; --p1-bg: #001A08;
+  --p2: #5A96FF; --p2-bg: #001030;
+  --p3: #D9A030; --p3-bg: #1A1000;
+  --p4: #A874FF; --p4-bg: #130025;
+  --shadow: 0 1px 4px rgba(0,0,0,.25), 0 0 0 1px var(--border);
+}}
+
+#view-cl[data-theme="light"] {
+  --bg:#F6F7F9; --surface:#FFFFFF; --surface-2:#EFF1F5; --border:#DDE0E8;
+  --text-hi:#0F1218; --text-mid:#525B70; --text-lo:#8A93A6;
+  --c-ban:#B83A00; --c-ban-bg:#FFF1EC;
+  --c-check:#124FA3; --c-check-bg:#EAF0FF;
+  --c-duyet:#1A6B33; --c-duyet-bg:#EAF4EE;
+  --c-baocao:#5C2FA0; --c-baocao-bg:#F2EEFF;
+  --c-pre:#7A5500; --c-pre-bg:#FFF8E5;
+  --p1:#1A6B33; --p1-bg:#E8F5EE;
+  --p2:#0B5FBF; --p2-bg:#E6EFFF;
+  --p3:#8A5A00; --p3-bg:#FFF5E5;
+  --p4:#5B3E8A; --p4-bg:#F2EDFF;
+  --shadow: 0 1px 4px rgba(0,0,0,.06), 0 0 0 1px var(--border);
+}
+#view-cl[data-theme="dark"] {
+  --bg:#0C0E14; --surface:#141820; --surface-2:#1B1F2A; --border:#272D3C;
+  --text-hi:#E5E8F0; --text-mid:#8895AE; --text-lo:#525B70;
+  --c-ban:#FF6A30; --c-ban-bg:#220800;
+  --c-check:#5A96FF; --c-check-bg:#001030;
+  --c-duyet:#48B86A; --c-duyet-bg:#001A08;
+  --c-baocao:#A874FF; --c-baocao-bg:#130025;
+  --c-pre:#D9A030; --c-pre-bg:#1A1000;
+  --p1:#48B86A; --p1-bg:#001A08;
+  --p2:#5A96FF; --p2-bg:#001030;
+  --p3:#D9A030; --p3-bg:#1A1000;
+  --p4:#A874FF; --p4-bg:#130025;
+  --shadow: 0 1px 4px rgba(0,0,0,.25), 0 0 0 1px var(--border);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text-hi);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── STICKY HEADER ─────────────────────────────────── */
+.hdr {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.hdr-title {
+  font-size: 13px; font-weight: 700; letter-spacing: .03em;
+  white-space: nowrap; color: var(--text-hi);
+}
+.hdr-sub {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--text-lo); white-space: nowrap;
+}
+.hdr-stats { display: flex; gap: 18px; flex-wrap: wrap; }
+.hdr-stat { display: flex; flex-direction: column; gap: 1px; }
+.hdr-stat-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-lo); }
+.hdr-stat-val { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text-hi); }
+.hdr-prog { flex: 1 1 180px; display: flex; flex-direction: column; gap: 3px; }
+.hdr-prog-row { display: flex; justify-content: space-between; }
+.hdr-prog-lbl { font-size: 10px; color: var(--text-lo); }
+.hdr-prog-pct { font-size: 10px; font-variant-numeric: tabular-nums; color: var(--text-mid); }
+.hdr-prog-bar { height: 4px; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+.hdr-prog-fill { height: 100%; background: var(--c-duyet); border-radius: 2px; width: 0%; transition: width .35s ease; }
+.btn-reset {
+  font-size: 10px; padding: 4px 10px; border-radius: var(--r-sm);
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-lo); cursor: pointer; letter-spacing: .04em;
+  transition: border-color .15s, color .15s; white-space: nowrap;
+}
+.btn-reset:hover { border-color: var(--text-mid); color: var(--text-hi); }
+.btn-reset:focus-visible { outline: 2px solid var(--c-check); outline-offset: 2px; }
+
+/* ── PAGE BODY ─────────────────────────────────────── */
+.page { max-width: 820px; margin: 0 auto; padding: 24px 16px 64px; display: flex; flex-direction: column; gap: 28px; }
+
+/* ── WEEK SECTION ──────────────────────────────────── */
+.wk {}
+.wk-hdr {
+  display: flex; align-items: baseline; gap: 10px;
+  padding-bottom: 8px; margin-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+}
+.wk-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-lo); }
+.wk-name { font-size: 15px; font-weight: 800; color: var(--text-hi); }
+.wk-range { font-size: 12px; color: var(--text-mid); }
+.wk-meta { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.wk-batches { font-size: 10px; letter-spacing: .04em; color: var(--text-lo); white-space: nowrap; }
+.wk-prog-wrap { display: flex; align-items: center; gap: 6px; }
+.wk-prog-bar { width: 60px; height: 3px; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+.wk-prog-fill { height: 100%; background: var(--c-duyet); border-radius: 2px; transition: width .3s; }
+.wk-prog-txt { font-size: 10px; font-variant-numeric: tabular-nums; color: var(--text-lo); white-space: nowrap; }
+
+.day-list { display: flex; flex-direction: column; gap: 7px; }
+
+/* ── DAY CARD ──────────────────────────────────────── */
+.dc {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--r);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  overflow: hidden;
+  border-left: 3px solid transparent;
+  transition: box-shadow .15s;
+}
+.dc:hover { box-shadow: 0 3px 12px rgba(0,0,0,.10), 0 0 0 1px var(--border); }
+.dc.ban   { border-left-color: var(--c-ban); }
+.dc.check { border-left-color: var(--c-check); }
+.dc.duyet { border-left-color: var(--c-duyet); }
+.dc.baocao{ border-left-color: var(--c-baocao); }
+.dc.pre   { border-left-color: var(--c-pre); }
+
+.dc-date {
+  padding: 10px 6px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  border-right: 1px solid var(--border);
+  background: var(--surface-2);
+  gap: 2px;
+}
+.dc-dd { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; color: var(--text-hi); }
+.dc-mm { font-size: 9px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-lo); }
+.dc-day{ font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-mid); margin-top: 3px; }
+
+.dc-body { padding: 10px 14px 12px; display: flex; flex-direction: column; gap: 7px; }
+
+.dc-top { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.tbadge {
+  display: inline-flex; align-items: center;
+  padding: 2px 7px; border-radius: 2px;
+  font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+}
+.tbadge.ban   { background: var(--c-ban-bg);   color: var(--c-ban);   }
+.tbadge.check { background: var(--c-check-bg); color: var(--c-check); }
+.tbadge.duyet { background: var(--c-duyet-bg); color: var(--c-duyet); }
+.tbadge.baocao{ background: var(--c-baocao-bg);color: var(--c-baocao);}
+.tbadge.pre   { background: var(--c-pre-bg);   color: var(--c-pre);   }
+.tbadge.check2{ background: var(--c-check-bg); color: var(--c-check); }
+
+.dc-title { font-size: 12px; font-weight: 700; color: var(--text-hi); }
+
+.tasks { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+.ti {
+  display: flex; align-items: flex-start; gap: 7px; cursor: pointer;
+  padding: 1px 0;
+}
+.ti input[type="checkbox"] {
+  flex-shrink: 0; width: 13px; height: 13px;
+  margin-top: 2px; cursor: pointer; accent-color: var(--c-duyet);
+}
+.ti-txt {
+  font-size: 12px; color: var(--text-mid); line-height: 1.45;
+  transition: color .12s;
+}
+.ti.done .ti-txt { color: var(--text-lo); text-decoration: line-through; }
+
+.pt {
+  display: inline; font-size: 10px; font-weight: 700;
+  padding: 0 3px 1px; border-radius: 2px; vertical-align: middle; margin-right: 1px;
+}
+.pt.p1 { background: var(--p1-bg); color: var(--p1); }
+.pt.p2 { background: var(--p2-bg); color: var(--p2); }
+.pt.p3 { background: var(--p3-bg); color: var(--p3); }
+.pt.p4 { background: var(--p4-bg); color: var(--p4); }
+.pt.all{ background: var(--surface-2); color: var(--text-mid); }
+
+.dc-note {
+  font-size: 11px; padding: 5px 8px; border-radius: 3px;
+  border-left: 2px solid; margin-top: 2px;
+}
+.dc-note.check { background: var(--c-check-bg); color: var(--c-check); border-color: var(--c-check); }
+.dc-note.ban   { background: var(--c-ban-bg);   color: var(--c-ban);   border-color: var(--c-ban);   }
+.dc-note.duyet { background: var(--c-duyet-bg); color: var(--c-duyet); border-color: var(--c-duyet); }
+
+/* ── BATCH TRACKER ─────────────────────────────────── */
+.batch-track {
+  background: var(--surface); box-shadow: var(--shadow);
+  border-radius: var(--r); padding: 12px 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.bt-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: .09em; color: var(--text-lo); }
+.bt-dots { display: flex; gap: 8px; flex-wrap: wrap; }
+.bt-dot {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  cursor: pointer;
+}
+.bt-circle {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid var(--c-ban); background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--c-ban);
+  transition: background .2s, color .2s;
+}
+.bt-dot.fired .bt-circle { background: var(--c-ban); color: #fff; }
+.bt-date { font-size: 9px; letter-spacing: .04em; color: var(--text-lo); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 520px) {
+  .dc { grid-template-columns: 54px 1fr; }
+  .dc-dd { font-size: 17px; }
+  .hdr { gap: 12px; }
+  .hdr-stats { gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hdr-prog-fill, .wk-prog-fill, .bt-circle { transition: none; }
+}
+
+#view-cl{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  background:var(--bg);color:var(--text-hi);
+}
+#view-cl .hdr{
+  position:sticky;top:44px;z-index:50;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:10px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+</style>
+
+<style>
+/* ═══ CONTENT CSS (scoped) ═════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+#view-ct {
+  --bg:#F0F3F8;--surf:#fff;--navy:#152C5E;--ink:#0B1120;--muted:#6B7A94;--bdr:#D4DCE8;
+  --p1:#1A6B33;--p1b:#E7F3EB;
+  --p2:#0B5FBF;--p2b:#E6F0FC;
+  --p3:#8A5A00;--p3b:#FBF2E1;
+  --p4:#5B3E8A;--p4b:#F0EAF8;
+  --check:#005F2D;--warn:#7A4E00;--gate-bg:#FFFBEA;--gate-bdr:#D4A017;
+}
+body{background:var(--bg);color:var(--ink);font:13.5px/1.6 system-ui,-apple-system,sans-serif;padding:0 0 60px;}
+.phdr{background:var(--navy);color:#fff;padding:16px 28px;}
+.phdr h1{font-size:16px;font-weight:800;letter-spacing:-.01em;}
+.phdr .sub{font-size:11px;opacity:.5;margin-top:3px;}
+.wrap{max-width:980px;margin:0 auto;padding:24px 18px 0;}
+
+/* legend */
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+.lchip{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);}
+.ldot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+
+/* timeline */
+.tl{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:grid;grid-template-columns:130px 1fr;gap:0;position:relative;}
+.tl-item::before{content:'';position:absolute;left:54px;top:24px;bottom:-1px;width:2px;background:var(--bdr);z-index:0;}
+.tl-item:last-child::before{display:none;}
+
+.tl-date{padding:16px 16px 16px 0;text-align:right;position:relative;z-index:1;}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--bdr);border:2px solid var(--bg);position:absolute;right:-7px;top:20px;z-index:2;}
+.tl-dot.new{background:var(--p1);}
+.tl-dot.reuse{background:var(--bdr);}
+.tl-dot.refresh{background:var(--p3);}
+.tl-dot.gate{background:var(--p2);}
+.tl-dot.final{background:var(--navy);}
+
+.tl-d{font-size:13px;font-weight:800;color:var(--ink);}
+.tl-day{font-size:10px;color:var(--muted);margin-top:1px;}
+.tl-arrow{font-size:10px;color:var(--muted);margin-top:3px;}
+.tl-send{font-size:11px;font-weight:700;color:var(--navy);}
+
+.tl-body{padding:12px 0 20px 24px;border-left:none;}
+.tl-card{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:12px 15px;border-left:3px solid var(--bdr);}
+.tl-card.new{border-left-color:var(--p1);}
+.tl-card.reuse{border-left-color:var(--bdr);}
+.tl-card.refresh{border-left-color:var(--p3);}
+.tl-card.gate{border-left-color:var(--p2);background:var(--gate-bg);}
+.tl-card.final{border-left-color:var(--navy);}
+
+.tl-type{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
+.tl-card.new .tl-type{color:var(--p1);}
+.tl-card.reuse .tl-type{color:var(--muted);}
+.tl-card.refresh .tl-type{color:var(--p3);}
+.tl-card.gate .tl-type{color:var(--p2);}
+.tl-card.final .tl-type{color:var(--navy);}
+
+/* checklist */
+.cl{display:flex;flex-direction:column;gap:5px;}
+.cl-row{display:flex;align-items:flex-start;gap:8px;font-size:12px;}
+.cl-check{width:16px;height:16px;border-radius:3px;border:1.5px solid var(--bdr);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
+.cl-check.done{background:var(--p1b);border-color:var(--p1);}
+.cl-check.done::after{content:'✓';font-size:9px;color:var(--p1);font-weight:800;}
+.cl-check.warn{background:var(--p3b);border-color:var(--p3);}
+.tef{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:4px;white-space:nowrap;}
+.t1{background:var(--p1b);color:var(--p1);}
+.t2{background:var(--p2b);color:var(--p2);}
+.t3{background:var(--p3b);color:var(--p3);}
+.t4{background:var(--p4b);color:var(--p4);}
+.note{font-size:10.5px;color:var(--muted);margin-top:7px;line-height:1.5;font-style:italic;}
+.gate-note{font-size:11.5px;color:#5a3a00;line-height:1.6;}
+.gate-note b{color:var(--ink);}
+.kh{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;}
+
+/* group labels */
+.cl-group{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 0 3px;padding-left:24px;}
+.divider{height:1px;background:var(--bdr);margin:8px 0;}
+
+@media(max-width:640px){
+  .tl-item{grid-template-columns:90px 1fr;}
+  .tl-item::before{left:38px;}
+  .tl-dot{right:-7px;}
+}
+
+#view-ct{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  font-size:13.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:var(--bg,#F0F3F8);color:var(--ink,#0B1120);
+  padding-bottom:60px;
+}
+#view-ct .phdr{background:var(--navy,#152C5E);color:#fff;padding:16px 28px;}
+#view-ct .phdr h1{font-size:16px;font-weight:800;letter-spacing:-.01em;}
+#view-ct .phdr .sub{font-size:11px;opacity:.5;margin-top:3px;}
+#view-ct .wrap{max-width:980px;margin:0 auto;padding:24px 18px 0;}
+</style>
+
+</head>
+<body>
+
+<!-- ══ TOP NAV ══════════════════════════════════════════════════ -->
+<nav class="top-nav">
+  <div class="top-nav-brand">CRM T7 · 2026</div>
+  <div class="nav-tabs">
+    <button class="nav-tab tab-plan active" id="tab-plan" onclick="switchView('plan')">
+      <span class="nav-dot"></span> Plan T7
+    </button>
+    <button class="nav-tab tab-cl" id="tab-cl" onclick="switchView('cl')">
+      <span class="nav-dot"></span> Checklist
+      <span class="nav-pill" id="nav-prog">0%</span>
+    </button>
+    <button class="nav-tab tab-ct" id="tab-ct" onclick="switchView('ct')">
+      <span class="nav-dot"></span> Content
+    </button>
+  </div>
+</nav>
+
+<!-- ══ PLAN ════════════════════════════════════════════════════ -->
+<div id="view-plan">
+
+
+<!-- ══ PAGE HEADER ══════════════════════════════════════════════════════════ -->
+<div class="phdr">
+  <div class="phdr-inner">
+    <div class="phdr-left">
+      <h1>Plan CRM Tháng 7 / 2026 — 30Shine</h1>
+      <div class="sub">4 chương trình · Bắn mỗi 3 ngày · AS-OF 07/07/2026 · AOV=262k · CPS=300đ · GP=45%</div>
+    </div>
+    <div class="phdr-kpis">
+      <div class="kp"><div class="kp-l">BAN SMS (P1–P3)</div><div class="kp-v yel">108,955</div><div class="kp-s">07–28/07 · mỗi 3 ngày</div></div>
+      <div class="kp"><div class="kp-l">Inc.KH Target (CTRL)</div><div class="kp-v grn">+395</div><div class="kp-s">P1:+365 · P2:+30</div></div>
+      <div class="kp"><div class="kp-l">CP SMS</div><div class="kp-v">32.7M</div><div class="kp-s">108K × 300đ/SMS</div></div>
+      <div class="kp"><div class="kp-l">LNG Target (SMS + AOV)</div><div class="kp-v grn">+169M</div><div class="kp-s">P1 +25.1M · P4-AOV +155M</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ── PHILOSOPHY ─────────────────────────────────────────────────────────── -->
+<div class="philo" style="margin-top:18px;">
+  CRM T7 vận hành theo <b>4 tầng song song, mục tiêu +169M LNG</b>: P4 nâng chi tiêu 79,493 VIP đang về tự nhiên — kênh <b>0 đồng, đóng góp +155M</b>; P1 rút ngắn nhịp cắt để khách đến đều hơn; P2 kéo về tệp đã có uplift đo được; P3 đẩy AOV combo. Mọi kết quả đo bằng <b>CTRL riêng từng tệp</b> — không ghi công cho hành vi tự nhiên.
+</div>
+
+<!-- ── EVIDENCE TRACK RECORD ──────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Nền tảng quyết định — Track record T4 đến T6 (6 tháng đo thực tế)</div>
+  <div class="ev-grid">
+    <div class="ev-card win">
+      <div class="ev-month">T4 · Confirmed ×3</div>
+      <div class="ev-seg">P1 · F2-5 × R≤8W<br>Nhắc nhịp, không KM</div>
+      <div class="ev-lift up">+1.11pp</div>
+      <div class="ev-note">Lift cao nhất lịch sử. Áp dụng T7 P1 làm trụ cột. Bắn F≥11×R≤8W SMS cùng đợt → −1.13pp → blacklist từ đó.</div>
+    </div>
+    <div class="ev-card win">
+      <div class="ev-month">T5–T6 · Confirmed ×6</div>
+      <div class="ev-seg">P1 · F1 & F2 × R9-12W<br>Nhắc nhịp cắt đúng timing</div>
+      <div class="ev-lift up">+0.35–1.09pp</div>
+      <div class="ev-note">6/6 đợt dương liên tiếp. F2 BQ personalized đạt 61.5% read rate. Mẫu chuẩn đã xác lập cho T7.</div>
+    </div>
+    <div class="ev-card win">
+      <div class="ev-month">T6 · Confirmed ×1</div>
+      <div class="ev-seg">P2 · F3-5 × R13-24W<br>Kéo về không KM</div>
+      <div class="ev-lift up">+0.27pp</div>
+      <div class="ev-note">Ô duy nhất trong R13-24W có uplift dương. F2 và F6-10 cùng R đã đo âm → không đụng. Pool 11,203 KH.</div>
+    </div>
+    <div class="ev-card fail">
+      <div class="ev-month">T4–T6 · Confirmed ×6</div>
+      <div class="ev-seg">F≥11 & F6-10 × R≤8W<br>Bất kỳ SMS nào</div>
+      <div class="ev-lift dn">−1.13pp</div>
+      <div class="ev-note">VIP đang về đều — SMS làm phiền, về ít hơn. −51M T4. Toàn bộ nhóm này chuyển sang P4 tại ghế, 0 CP.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── P&L SUMMARY ─────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Tài chính tổng — SMS (P1–P4)</div>
+  <div class="pnl-grid">
+    <div class="pnl-card"><div class="l">BAN SMS (P1–P3)</div><div class="v">108,955</div><div class="s">P1: 42,988 · P2: 11,203 · P3: 54,764 · P4: 0 (tại ghế)</div></div>
+    <div class="pnl-card"><div class="l">CP SMS tổng</div><div class="v">32.7M đ</div><div class="s">108,955 × 300đ/SMS · P4 = 0 CP</div></div>
+    <div class="pnl-card"><div class="l">CP KM tổng (ước)</div><div class="v" style="color:var(--warn)">~13M đ</div><div class="s">P1 20k: 3.9M · P2 30k: 0.9M · P3 20k: 8.2M · P4: 0đ</div></div>
+    <div class="pnl-card hi"><div class="l">LNG net target tổng</div><div class="v grn">+169M đ</div><div class="s">P1 +25.1M · P4-AOV +155M · P2 −0.5M · P3 −11.1M</div></div>
+  </div>
+  <div style="overflow-x:auto;">
+  <table class="fin-tbl">
+    <thead><tr>
+      <th>Program</th><th class="r">BAN SMS</th><th class="r">Inc.KH</th><th class="r">AOV tb</th>
+      <th class="r">DT tăng thêm</th><th class="r">CP SMS</th><th class="r">CP KM</th><th class="r">LNG (45%)</th><th>Độ tin cậy</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="prog-pip" style="background:var(--p1)"></span><b>P1 — GIỮ NHỊP</b></td>
+        <td class="r">42,988</td><td class="r" style="color:var(--p1);font-weight:700">+365</td>
+        <td class="r">262k</td><td class="r">95.7M</td><td class="r">12.9M</td><td class="r">4.9M</td>
+        <td class="r" style="color:var(--p1);font-weight:700">+25.1M</td>
+        <td><span class="cf cf-ok">Confirmed ×6</span> T4-T6 F2-5×R≤8W dương liên tiếp · +F1×9-12W (test)</td>
+      </tr>
+      <tr>
+        <td><span class="prog-pip" style="background:var(--p2)"></span><b>P2 — KÉO VỀ</b></td>
+        <td class="r">11,203</td><td class="r" style="color:var(--p2);font-weight:700">+30</td>
+        <td class="r">276k</td><td class="r">8.3M</td><td class="r">3.4M</td><td class="r">0.9M</td>
+        <td class="r" style="color:var(--red);font-weight:700">−0.5M</td>
+        <td><span class="cf cf-ok">Evidence T6</span> Đầu tư đo: 4.3M chi → +30 KH có uplift thật. Chốt D+14.</td>
+      </tr>
+      <tr>
+        <td><span class="prog-pip" style="background:var(--p3)"></span><b>P3 — ĐẨY AOV</b></td>
+        <td class="r">54,764</td><td class="r" style="color:var(--muted)">~0</td>
+        <td class="r">244k</td><td class="r">~30M*</td><td class="r">16.4M</td><td class="r">~8.2M</td>
+        <td class="r" style="color:var(--red);font-weight:700">−11.1M</td>
+        <td><span class="cf cf-test">Đo T7</span> Đo AOV thực tế D+7. Breakeven tại +43%. Có exit plan rõ.</td>
+      </tr>
+      <tr>
+        <td><span class="prog-pip" style="background:var(--p4)"></span><b>P4 — ĐẨY AOV tại ghế</b></td>
+        <td class="r" style="color:var(--muted)">0 SMS</td><td class="r" style="color:var(--muted)">—</td>
+        <td class="r">230k</td><td class="r" style="color:var(--p4)">+305M*</td><td class="r" style="color:var(--p1)">0đ</td><td class="r" style="color:var(--p1)">0đ</td>
+        <td class="r" style="color:var(--p4);font-weight:700">+155M*</td>
+        <td><span class="cf cf-proj">Projected</span> ~30,900 natural returns × AOV +5% × 45%. Pool mở rộng +11,293 KH từ F6-10/F≥11×9-12W.</td>
+      </tr>
+      <tr>
+        <td><b>TỔNG</b></td>
+        <td class="r">108,955</td><td class="r" style="color:var(--p1)">+395</td>
+        <td class="r">—</td><td class="r">—</td><td class="r">32.7M</td><td class="r">~14M</td>
+        <td class="r" style="color:var(--p1)">~+169M</td>
+        <td>P1 +25.1M confirmed · P4 +155M projected · P2/P3 đang đo — có gates rõ</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="s-note">⚠️ LNG = DT_tăng_thêm × 45% − CP_SMS − CP_KM. CP_KM tính trên returners thực tế (CT-gated), không phải toàn bộ BAN. Cần CTRL per-segment để xác nhận Inc.KH.</div>
+</div>
+
+<!-- ── F×R COVERAGE MATRIX ───────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Ma trận độ phủ F × R — 4 chương trình T7</div>
+  <div class="mx-wrap">
+  <table class="mx-tbl">
+    <thead>
+      <tr>
+        <th class="mx-fth">F \ R</th>
+        <th>≤ 8W</th>
+        <th>9 – 12W</th>
+        <th>13 – 24W</th>
+        <th>25 – 48W</th>
+        <th>&gt; 48W</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- F1 -->
+      <tr>
+        <td class="mx-fhdr">F1<span>1 lần</span></td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">15,312</div>
+          <div class="mx-note">nhắc lần 2</div>
+        </td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">6,144</div>
+          <div class="mx-note">nhắc nhịp · test batch<br>đo D+7/D+14 riêng</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">27,144</div>
+          <div class="mx-note">F1 rời</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">44,719</div>
+          <div class="mx-note">F1 rời (pool to!)</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">89,141</div>
+          <div class="mx-note">&gt; 48W</div>
+        </td>
+      </tr>
+      <!-- F2 -->
+      <tr>
+        <td class="mx-fhdr">F2<span>2 lần</span></td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">5,862</div>
+          <div class="mx-note">giữ nhịp</div>
+        </td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">2,125</div>
+          <div class="mx-note">giữ nhịp</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">7,814</div>
+          <div class="mx-note">đo âm</div>
+        </td>
+        <td class="mx-p3">
+          <div class="mx-prog">P3 ĐẨY AOV</div>
+          <div class="mx-num">11,539</div>
+          <div class="mx-note">đẩy AOV</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">25,125</div>
+          <div class="mx-note">&gt; 48W</div>
+        </td>
+      </tr>
+      <!-- F3-5 -->
+      <tr>
+        <td class="mx-fhdr">F3-5<span>đều đặn</span></td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">10,407</div>
+          <div class="mx-note">đều đặn</div>
+        </td>
+        <td class="mx-p1">
+          <div class="mx-prog">P1 GIỮ NHỊP</div>
+          <div class="mx-num">3,338</div>
+          <div class="mx-note">giữ nhịp</div>
+        </td>
+        <td class="mx-p2">
+          <div class="mx-prog">P2 KÉO VỀ</div>
+          <div class="mx-num">10,700</div>
+          <div class="mx-note">kéo về</div>
+        </td>
+        <td class="mx-p3">
+          <div class="mx-prog">P3 ĐẨY AOV</div>
+          <div class="mx-num">13,552</div>
+          <div class="mx-note">đẩy AOV</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">29,989</div>
+          <div class="mx-note">&gt; 48W</div>
+        </td>
+      </tr>
+      <!-- F6-10 -->
+      <tr>
+        <td class="mx-fhdr">F6-10<span>thân</span></td>
+        <td class="mx-p4">
+          <div class="mx-prog">P4 GHẾ</div>
+          <div class="mx-num">10,959</div>
+          <div class="mx-note">upsell tại ghế</div>
+        </td>
+        <td class="mx-p4">
+          <div class="mx-prog">P4 GHẾ</div>
+          <div class="mx-num">2,814</div>
+          <div class="mx-note">mở rộng R≤12W<br>0 SMS · upsell tại ghế</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">7,903</div>
+          <div class="mx-note">−51M</div>
+        </td>
+        <td class="mx-p3">
+          <div class="mx-prog">P3 ĐẨY AOV</div>
+          <div class="mx-num">9,135</div>
+          <div class="mx-note">đẩy AOV</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">20,018</div>
+          <div class="mx-note">leak 64%</div>
+        </td>
+      </tr>
+      <!-- F≥11 -->
+      <tr>
+        <td class="mx-fhdr">F≥11<span>siêu thân</span></td>
+        <td class="mx-p4">
+          <div class="mx-prog">P4 GHẾ</div>
+          <div class="mx-num">53,564</div>
+          <div class="mx-note">upsell tại ghế</div>
+        </td>
+        <td class="mx-p4">
+          <div class="mx-prog">P4 GHẾ</div>
+          <div class="mx-num">8,479</div>
+          <div class="mx-note">mở rộng R≤12W<br>0 SMS · upsell tại ghế</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">18,440</div>
+          <div class="mx-note">−51M</div>
+        </td>
+        <td class="mx-p3">
+          <div class="mx-prog">P3 ĐẨY AOV</div>
+          <div class="mx-num">18,957</div>
+          <div class="mx-note">đẩy AOV</div>
+        </td>
+        <td class="mx-loai">
+          <div class="mx-prog">LOẠI</div>
+          <div class="mx-num">39,557</div>
+          <div class="mx-note">&gt; 48W</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Gap callout -->
+</div>
+
+<!-- ── 4 PROGRAM CARDS ─────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Chi tiết 4 chương trình</div>
+  <div class="prog-grid">
+
+    <!-- P1 -->
+    <div class="prog-card c1">
+      <div class="pc-hdr">
+        <div class="pc-label">Chương trình 1 · Tần suất</div>
+        <div class="pc-title">GIỮ NHỊP</div>
+        <div class="pc-tagline">"Biến người vừa đến thành người quay đều — nhắc đúng nhịp cắt, không để rơi."</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-row"><div class="pc-k">Pool SMS</div><div class="pc-v"><b>42,988 KH</b> · F1 & F2/F3-5 × R≤12W + F1×R9-12W (bổ sung)<br>
+          <span class="tag t-p1">F1 ≤8W: 15,097</span> <span class="tag t-p1">F2-3-5 giữ nhịp: 21,747</span> <span class="tag t-p1">F1×9-12W mới: 6,144</span></div></div>
+        <div class="pc-row"><div class="pc-k">Pool tại ghế</div><div class="pc-v"><b>64,099 KH P1-AOV</b> · F≥11 & F6-10 active · KHÔNG SMS · upsell tại ghế/app</div></div>
+        <div class="pc-row"><div class="pc-k">Cơ chế</div><div class="pc-v">Nhắc gần nhịp cắt (đo từ Nhip_cat_tuan) → tạo thói quen F1→F2 (trụ bền T3-T6: F1/F2 +6/6 win, leak 0%). Rolling daily trigger — mỗi ngày bắn ~400 KH tới nhịp.</div></div>
+        <div class="pc-row"><div class="pc-k">KM</div><div class="pc-v">F1 lần 2: <b>20k gate lần 2</b> (giảm barrier quay lại) · F2-F3-5: <b>0đ</b> (nhắc suông đủ thắng)</div></div>
+        <div class="pc-row"><div class="pc-k">KPI đo</div><div class="pc-v">%Về BAN vs CTRL D+7, D+14 · Inc.KH · CTRL 10% per segment</div></div>
+        <div class="mini-pnl">
+          <div class="mp-item"><div class="ml">BAN SMS</div><div class="mv blue">42,988</div></div>
+          <div class="mp-item"><div class="ml">Inc.KH target</div><div class="mv grn">+365</div></div>
+          <div class="mp-item"><div class="ml">LNG SMS</div><div class="mv grn">+25.1M</div></div>
+        </div>
+        <div style="margin-top:8px;font-size:10.5px;color:var(--muted)">CP SMS: 42,988 × 300đ = 12.9M · CP KM 4.9M · LNG = 95.7M×45% − 17.8M = +25.1M · bao gồm F1×9-12W (6,144 KH, đo D+7/D+14 riêng)</div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="prog-card c2">
+      <div class="pc-hdr">
+        <div class="pc-label">Chương trình 2 · Uplift thật</div>
+        <div class="pc-title">KÉO VỀ</div>
+        <div class="pc-tagline">"Kéo khách rời 3–6 tháng quay lại — đánh đúng ô đã chứng minh, không blast rộng."</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-row"><div class="pc-k">Pool SMS</div><div class="pc-v"><b>11,203 KH</b> · F3-5 × R13-24W (nhịp ~17W)<br>
+          <span class="tag t-p2">7,468 KH bắn ngày 04/07</span> <span class="tag t-p2">~25/ngày rolling</span></div></div>
+        <div class="pc-row"><div class="pc-k">Cơ chế</div><div class="pc-v">Ô uplift-thật đáng tin nhất T6: F3-5 × R13-24W <b>+0.27pp</b> D+14. Các ô 13-24W khác đã đo âm T6 (F2 −0.41pp, F6-10 −0.20pp) → <b>KHÔNG đụng</b>.</div></div>
+        <div class="pc-row"><div class="pc-k">KM</div><div class="pc-v"><b>30k CT-gated</b> — chỉ dùng tại CTY, khoá leak NQ. Cẩn thận: nếu 30k áp hết ~650 natural returnees → GP âm −17M. <span class="tag t-red">Chỉ gate KH incremental</span></div></div>
+        <div class="pc-row"><div class="pc-k">KPI đo</div><div class="pc-v">Uplift pp vs CTRL D+14 · LNG = DT×45% − 1.7M − 0.9M · Stop nếu D+7 âm</div></div>
+        <div class="mini-pnl">
+          <div class="mp-item"><div class="ml">BAN SMS</div><div class="mv blue">11,203</div></div>
+          <div class="mp-item"><div class="ml">Inc.KH target</div><div class="mv grn">+30</div></div>
+          <div class="mp-item"><div class="ml">LNG</div><div class="mv red">−0.5M</div></div>
+        </div>
+        <div style="margin-top:6px;padding:6px 10px;background:var(--redb);border-radius:5px;font-size:10.5px;color:var(--red);">CP SMS 3.4M + KM 0.9M = 4.3M tổng chi · DT×45% = 3.74M → LNG −0.5M. Mỗi KH kéo thêm: 141,000đ/KH. Theo dõi Inc.KH D+14 để đánh giá tiếp.</div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="prog-card c3">
+      <div class="pc-hdr">
+        <div class="pc-label">Chương trình 3 · Dòng tiền AOV</div>
+        <div class="pc-title">ĐẨY AOV — NHÓM RỜI</div>
+        <div class="pc-tagline">"Moi dòng tiền từ người rời 6-12 tháng — bán combo/gói dịch vụ cao, không cần thêm đầu khách."</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-row"><div class="pc-k">Pool SMS</div><div class="pc-v"><b>54,764 KH</b> · R25-48W (F2–F≥11) · nhịp tự về ~13.5W<br>
+          <span class="tag t-p3">49,353 bắn 04/07</span> <span class="tag t-p3">~35/ngày rolling</span></div></div>
+        <div class="pc-row"><div class="pc-k">Cơ chế</div><div class="pc-v">Uplift headcount ~0 (T6 D+8 xác nhận) + NQ leak 41% → <b>KHÔNG săn đầu KH</b>. Nâng chi tiêu/lần cho người vẫn về. Target: AOV BAN vs CTRL <b>+20%</b> qua combo offer.</div></div>
+        <div class="pc-row"><div class="pc-k">KM</div><div class="pc-v"><b>20k CT-gate + gắn dịch vụ giá trị cao</b>. Gate = chỉ áp khi book combo ≥300k. Không áp giảm giá thường.</div></div>
+        <div class="pc-row"><div class="pc-k">KPI đo</div><div class="pc-v"><b>AOV_BAN vs AOV_CTRL</b> (không phải số KH về). Đo D+7. Nếu AOV không có sự khác biệt → dừng re-send. Breakeven tại AOV +20%.</div></div>
+        <div class="mini-pnl">
+          <div class="mp-item"><div class="ml">BAN SMS</div><div class="mv" style="color:var(--p3)">54,764</div></div>
+          <div class="mp-item"><div class="ml">Inc.KH</div><div class="mv" style="color:var(--muted)">~0</div></div>
+          <div class="mp-item"><div class="ml">LNG (AOV +20%)</div><div class="mv red">−11.1M</div></div>
+        </div>
+        <div style="margin-top:6px;padding:6px 10px;background:var(--redb);border-radius:5px;font-size:10.5px;color:var(--red);">CP SMS 16.4M + KM 8.2M = 24.6M tổng chi. Breakeven cần AOV +43% vs target +20%. Đo AOV_BAN vs AOV_CTRL D+7 — nếu đạt +43% thì hòa vốn, trên đó có lãi.</div>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="prog-card c4">
+      <div class="pc-hdr">
+        <div class="pc-label">Chương trình 4 · Dòng tiền · 0 CP</div>
+        <div class="pc-title">ĐẨY AOV — NGƯỜI ĐANG VỀ</div>
+        <div class="pc-tagline">"VIP và khách đang cắt đều — nâng chi tiêu mỗi lần ngay tại ghế, kênh 0 đồng. Đóng góp trần Ads lớn nhất."</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-row"><div class="pc-k">Pool tại ghế</div><div class="pc-v"><b>79,493 KH</b> · F6-10 & F≥11 × R≤12W · KHÔNG SMS<br>
+          <span class="tag t-p4">R≤8W gốc: 68,200</span> <span class="tag t-p4">F6-10×9-12W bổ sung: 2,814</span> <span class="tag t-p4">F≥11×9-12W bổ sung: 8,479</span></div></div>
+        <div class="pc-row"><div class="pc-k">Cơ chế</div><div class="pc-v">Đằng nào cũng về → <b>KHÔNG nhắn SMS</b> (T4 confirmed: SMS gây hại −1.13pp với nhóm này). Nâng AOV tại ghế/app bằng upsell dịch vụ, combo, nâng cấp. Pool lớn nhất × chi tiêu cao = dòng tiền lớn nhất.</div></div>
+        <div class="pc-row"><div class="pc-k">Làm gì</div><div class="pc-v">Huấn luyện salon upsell chuẩn tại ghế · combo/nâng cấp dịch vụ trên app · menu giá trị cao hiển thị tại điểm chờ · stylist gợi ý khi đang cắt</div></div>
+        <div class="pc-row"><div class="pc-k">KM</div><div class="pc-v"><b>0đ cash</b> · combo/nâng cấp dịch vụ không giảm giá · margin đầy đủ</div></div>
+        <div class="pc-row"><div class="pc-k">KPI đo</div><div class="pc-v">AOV BAN vs CTRL (salon có upsell training vs salon chưa) · DT/lần tăng thêm · đo per-salon, không per-KH</div></div>
+        <div class="mini-pnl">
+          <div class="mp-item"><div class="ml">Pool tại ghế</div><div class="mv" style="color:var(--p4)">79,493</div></div>
+          <div class="mp-item"><div class="ml">Natural return T7</div><div class="mv" style="color:var(--p4)">~30,900</div></div>
+          <div class="mp-item"><div class="ml">LNG (AOV +5%)</div><div class="mv" style="color:var(--p4)">+155M</div></div>
+        </div>
+        <div style="margin-top:6px;padding:7px 10px;background:var(--p4b);border-radius:5px;font-size:10.5px;color:var(--p4l);">AOV +5% × ~30,900 natural returns × 230k × 45% = <b>+155M LNG</b> · 0 CP SMS · 0 CP KM · Pool mở rộng R≤12W cho F6-10/F≥11 (+11,293 KH). LNG lớn nhất trong 4 chương trình.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MEASUREMENT GATES ──────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Gates đo lường — điều kiện tiếp tục / điều chỉnh / dừng</div>
+  <div class="gates-grid">
+    <div class="gate-card">
+      <div class="gate-hdr">
+        <div class="gate-dot" style="background:var(--p1)"></div>
+        <div class="gate-title">P1 — GIỮ NHỊP</div>
+        <div class="gate-date">Check D+7 · D+14</div>
+      </div>
+      <div class="gate-rows">
+        <div class="gate-row"><div class="gl">Đo gì</div><div class="gv">%Về BAN vs CTRL per segment · Inc.KH = BAN × (rate_BAN − rate_CTRL)</div></div>
+        <div class="gate-row"><div class="gl">Tiếp tục</div><div class="gv"><b>Inc.KH D+14 ≥ +250</b> (80% target). Rolling tiếp, giữ nguyên mẫu content.</div></div>
+        <div class="gate-row"><div class="gl">Điều chỉnh</div><div class="gv"><b>Inc.KH 150–250:</b> giữ nhưng A/B test mẫu content mới tuần 3.</div></div>
+        <div class="gate-row"><div class="gl">Dừng</div><div class="gv"><b>Inc.KH &lt; 150 hoặc âm D+7:</b> dừng rolling, review segment tệp bị nhiễu.</div></div>
+      </div>
+    </div>
+    <div class="gate-card">
+      <div class="gate-hdr">
+        <div class="gate-dot" style="background:var(--p2)"></div>
+        <div class="gate-title">P2 — KÉO VỀ</div>
+        <div class="gate-date">Check D+7 · D+14</div>
+      </div>
+      <div class="gate-rows">
+        <div class="gate-row"><div class="gl">Đo gì</div><div class="gv">Uplift pp BAN vs CTRL · LNG = DT×45% − 4.3M tổng CP</div></div>
+        <div class="gate-row"><div class="gl">Tiếp tục</div><div class="gv"><b>Inc.KH ≥ 36 D+14</b> → LNG dương. Rolling tiếp tháng 8.</div></div>
+        <div class="gate-row"><div class="gl">Điều chỉnh</div><div class="gv"><b>Inc.KH 27–35:</b> bỏ KM 30k → LNG hòa vốn, vẫn kéo được người về.</div></div>
+        <div class="gate-row"><div class="gl">Dừng</div><div class="gv"><b>Inc.KH &lt; 27 hoặc D+7 âm:</b> dừng rolling P2, đưa pool sang Ads exclusion.</div></div>
+      </div>
+    </div>
+    <div class="gate-card">
+      <div class="gate-hdr">
+        <div class="gate-dot" style="background:var(--p3)"></div>
+        <div class="gate-title">P3 — ĐẨY AOV</div>
+        <div class="gate-date">Check D+7 AOV</div>
+      </div>
+      <div class="gate-rows">
+        <div class="gate-row"><div class="gl">Đo gì</div><div class="gv"><b>AOV_BAN vs AOV_CTRL</b> (không phải số KH về). Đo per-bill trong D+7.</div></div>
+        <div class="gate-row"><div class="gl">Tiếp tục</div><div class="gv"><b>AOV_BAN ≥ AOV_CTRL +43%:</b> hòa vốn trở lên. Scale pool T8.</div></div>
+        <div class="gate-row"><div class="gl">Điều chỉnh</div><div class="gv"><b>AOV +20–42%:</b> chuyển P3 sang kênh app/tại ghế T8, bỏ SMS. Dữ liệu AOV vẫn có giá trị.</div></div>
+        <div class="gate-row"><div class="gl">Dừng SMS</div><div class="gv"><b>AOV_BAN ≈ AOV_CTRL:</b> SMS không thay đổi hành vi mua. Dừng ngay, 0 re-send.</div></div>
+      </div>
+    </div>
+    <div class="gate-card">
+      <div class="gate-hdr">
+        <div class="gate-dot" style="background:var(--p4)"></div>
+        <div class="gate-title">P4 — AOV tại ghế</div>
+        <div class="gate-date">Check D+14 per salon</div>
+      </div>
+      <div class="gate-rows">
+        <div class="gate-row"><div class="gl">Đo gì</div><div class="gv">AOV per salon có training vs salon chưa training (CTRL tự nhiên). Đo cuối tháng.</div></div>
+        <div class="gate-row"><div class="gl">Tiếp tục</div><div class="gv"><b>AOV salon training ≥ +5%:</b> nhân rộng training toàn hệ thống T8. +133M confirmed.</div></div>
+        <div class="gate-row"><div class="gl">Điều chỉnh</div><div class="gv"><b>AOV +2–4%:</b> review script upsell, thêm incentive stylist, đo lại T8.</div></div>
+        <div class="gate-row"><div class="gl">Đánh giá lại</div><div class="gv"><b>AOV không đổi:</b> training chưa đủ sâu hoặc sai script. Redesign chương trình Q3.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="s-note" style="margin-top:8px;">CTRL per-tệp · random_state=42 · stratified by F×Loai(CTY/NQ) · không gộp CTRL giữa các program · không ghi công cho hành vi tự nhiên.</div>
+</div>
+
+<!-- ── LỊCH BẮN ────────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Lịch bắn — Mỗi 3 ngày · 07–28/07/2026</div>
+  <div class="sched-wrap">
+  <table class="sched-tbl">
+    <thead><tr>
+      <th style="text-align:left">Ngày</th>
+      <th style="color:#8FE8A8">P1 GIỮ NHỊP</th>
+      <th style="color:#89B4F0">P2 KÉO VỀ</th>
+      <th style="color:#F0C97A">P3 ĐẨY AOV</th>
+      <th style="color:#C9A8F0">P4 AOV tại ghế</th>
+      <th>SMS/đợt</th>
+      <th style="text-align:left;padding-left:10px">Sự kiện</th>
+    </tr></thead>
+    <tbody>
+      <!-- TUẦN 1 -->
+      <tr style="background:var(--surf2,#F4F7FC);"><td colspan="7" style="padding:5px 10px;font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;">TUẦN 1 &nbsp;·&nbsp; 07 – 13 / 07</td></tr>
+      <tr><td class="dlab">07/07 T3</td><td>6,632 <span class="bar" style="width:32px;background:var(--p1b);border:1px solid var(--p1)"></span></td><td>2,241 <span class="bar" style="width:18px;background:var(--p2b);border:1px solid var(--p2)"></span></td><td>12,048 <span class="bar" style="width:40px;background:var(--p3b);border:1px solid var(--p3)"></span></td><td style="color:var(--p4);font-size:11px;">0 SMS · upsell tại ghế</td><td><b>20,921</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">🚀 Đợt 1 — Batch mở màn T7 · P4 upsell salon tiếp tục</td></tr>
+      <tr><td class="dlab">10/07 T6</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 2</td></tr>
+      <tr><td class="dlab">13/07 T2</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 3 · cuối Tuần 1</td></tr>
+      <!-- TUẦN 2 -->
+      <tr style="background:var(--surf2,#F4F7FC);"><td colspan="7" style="padding:5px 10px;font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;">TUẦN 2 &nbsp;·&nbsp; 14 – 20 / 07</td></tr>
+      <tr><td class="dlab" style="color:var(--p2);font-weight:700;">14/07 T3</td><td colspan="4" style="color:var(--p2);font-size:11.5px;font-weight:600;">📊 D+7 Đợt 1 (07/07) — đọc Inc.KH P1/P2 · AOV P3 vs CTRL · quyết định giữ / điều chỉnh</td><td>—</td><td style="font-size:11px;color:var(--p2);padding-left:10px;">Check gate Đợt 1</td></tr>
+      <tr><td class="dlab">16/07 T5</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 4</td></tr>
+      <tr><td class="dlab" style="color:var(--p2);font-weight:700;">17/07 T6</td><td colspan="4" style="color:var(--p2);font-size:11.5px;font-weight:600;">📊 D+7 Đợt 2 (10/07) — xác nhận trend P1/P3</td><td>—</td><td style="font-size:11px;color:var(--p2);padding-left:10px;">Check gate Đợt 2</td></tr>
+      <tr><td class="dlab">19/07 CN</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 5 · cuối Tuần 2</td></tr>
+      <!-- TUẦN 3 -->
+      <tr style="background:var(--surf2,#F4F7FC);"><td colspan="7" style="padding:5px 10px;font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;">TUẦN 3 &nbsp;·&nbsp; 21 – 27 / 07</td></tr>
+      <tr><td class="dlab" style="color:var(--p1);font-weight:700;">21/07 T3</td><td colspan="4" style="color:var(--p1);font-size:11.5px;font-weight:600;">📊 D+14 Đợt 1 (07/07) — Inc.KH chính thức · quyết định có re-send / mở pool không</td><td>—</td><td style="font-size:11px;color:var(--p1);padding-left:10px;">Gate D+14 Đợt 1</td></tr>
+      <tr><td class="dlab">22/07 T4</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 6</td></tr>
+      <tr><td class="dlab" style="color:var(--p1);font-weight:700;">24/07 T6</td><td colspan="4" style="color:var(--p1);font-size:11.5px;font-weight:600;">📊 D+14 Đợt 2 (10/07) · D+7 Đợt 4 (16/07)</td><td>—</td><td style="font-size:11px;color:var(--p1);padding-left:10px;">Gate kép</td></tr>
+      <tr><td class="dlab">25/07 T7</td><td>4,316</td><td>1,280</td><td>6,102</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,698</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 7 · cuối Tuần 3</td></tr>
+      <!-- TUẦN 4 -->
+      <tr style="background:var(--surf2,#F4F7FC);"><td colspan="7" style="padding:5px 10px;font-size:10.5px;font-weight:800;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;">TUẦN 4 &nbsp;·&nbsp; 28 – 31 / 07</td></tr>
+      <tr><td class="dlab">28/07 T3</td><td>4,316</td><td>1,282</td><td>6,104</td><td style="color:var(--p4);font-size:11px;">—</td><td><b>11,702</b></td><td style="font-size:11px;color:var(--muted);padding-left:10px;">Đợt 8 — Batch cuối T7</td></tr>
+      <tr><td class="dlab" style="color:var(--navy);font-weight:700;">11/08 T3</td><td colspan="4" style="color:var(--navy);font-size:11.5px;font-weight:600;">📊 D+14 Đợt 8 (28/07) — Tổng kết CRM tháng 7</td><td>—</td><td style="font-size:11px;color:var(--navy);padding-left:10px;">Close T7</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
+    <div class="s-note" style="flex:1;min-width:240px;">💡 <b>8 đợt bắn</b> · mỗi 3 ngày từ 07/07 → 28/07 · Tổng SMS = <b>102,811 KH</b> · Chia theo tuần T2-CN tiện kỳ báo cáo hàng tuần.</div>
+    <div class="s-note" style="flex:1;min-width:240px;">📊 <b>Check gate</b>: D+7 sau mỗi đợt đầu tiên (Đợt 1 → 14/07, Đợt 2 → 17/07) · D+14 chính thức (Đợt 1 → 21/07) · Không bắn lại &lt; D+14 cùng pool.</div>
+  </div>
+</div>
+
+<!-- ── LỊCH CONTENT ──────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-label">Lịch content — chuẩn bị D-1 trước mỗi đợt bắn</div>
+  <div style="overflow-x:auto;">
+  <div class="cc-wrap" style="background:var(--surf);border:1px solid var(--bdr);border-radius:8px;overflow:hidden;">
+    <!-- header -->
+    <div class="cc-row hdr">
+      <div class="cc-cell">Deadline content (D-1)</div>
+      <div class="cc-cell">Ngày bắn</div>
+      <div class="cc-cell">Việc cần làm & nội dung mẫu</div>
+    </div>
+
+    <!-- TUẦN 1 header -->
+    <div class="cc-row" style="display:block;"><div class="cc-section-hdr">TUẦN 1 · 07 – 13/07 — Batch 1, 2, 3</div></div>
+
+    <!-- 06/07 → 07/07 Đợt 1 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">06/07 T2</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Deadline chuẩn bị</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">07/07 T3</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">🚀 Đợt 1 · <b>20,921 KH</b></div></div>
+      <div class="cc-cell">
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
+          <span class="cc-badge cb-p1">P1 GIỮ NHỊP · 6,632 KH</span>
+          <span class="cc-badge cb-p2">P2 KÉO VỀ · 2,241 KH</span>
+          <span class="cc-badge cb-p3">P3 ĐẨY AOV · 12,048 KH</span>
+          <span class="cc-badge cb-p4">P4 AOV tại ghế · 0 SMS</span>
+        </div>
+        <ul class="cc-tasks">
+          <li><span class="cc-badge cb-p1">P1</span> Duyệt mẫu nhắc nhịp cắt F1/F2/F3-5 · token [Tên] + [X tuần] + [tên salon] · ≤160 ký tự</li>
+          <li><span class="cc-badge cb-p2">P2</span> Duyệt mẫu "lâu rồi chưa gặp" + 30k offer · xác nhận gate CTY cho voucher</li>
+          <li><span class="cc-badge cb-p3">P3</span> Duyệt mẫu combo AOV · xác nhận gói dịch vụ ≥300k còn hiệu lực</li>
+          <li><span class="cc-badge cb-p4">P4</span> <b>Không SMS.</b> Cập nhật training script upsell tại ghế · kiểm tra menu combo salon</li>
+          <li><span class="cc-badge cb-all">ALL</span> Set CTRL 10% stratified F×R trước khi queue · dedup pool đã bắn T6</li>
+        </ul>
+        <div class="msg-box">P1 mẫu: "[Tên] ơi — đã [X] tuần rồi nhỉ. Ghé 30Shine [tên salon] khi tiện nhé, team đang chờ anh!"</div>
+        <div class="msg-box" style="margin-top:4px;">P3 mẫu: "Anh [Tên] ghé [salon] tháng này thử combo [tên gói dịch vụ] — đang có ưu đãi 20k khi book trước."</div>
+      </div>
+    </div>
+
+    <!-- 09/07 → 10/07 Đợt 2 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">09/07 T5</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">10/07 T6</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 2 · <b>11,698 KH</b></div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Xem D+3 open-rate Đợt 1 · nếu &lt;45% → điều chỉnh mẫu trước khi queue Đợt 2</li>
+          <li>Giữ nguyên mẫu P1/P2/P3 đã duyệt nếu chưa có feedback điều chỉnh</li>
+          <li>Chuẩn bị CTRL riêng Đợt 2 — không gộp CTRL với Đợt 1</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 12/07 → 13/07 Đợt 3 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">12/07 CN</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">13/07 T2</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 3 · <b>11,698 KH</b></div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Chuẩn bị content Đợt 3 · nếu có combo/event mới → cập nhật mẫu P3</li>
+          <li>Nhắc nhở: 14/07 (ngày mai sau bắn) là D+7 Đợt 1 — chuẩn bị pull data báo cáo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TUẦN 2 header -->
+    <div class="cc-row" style="display:block;"><div class="cc-section-hdr">TUẦN 2 · 14 – 20/07 — Batch 4, 5 + D+7 check Đợt 1 & 2</div></div>
+
+    <!-- 14/07 D+7 check Đợt 1 -->
+    <div class="cc-row">
+      <div class="cc-cell prep" style="border-left:3px solid var(--p2);"><div class="cc-date-prep" style="color:var(--p2)">14/07 T3</div><div style="font-size:10px;color:var(--p2);margin-top:2px;font-weight:700;">📊 CHECK GATE</div></div>
+      <div class="cc-cell send" style="background:rgba(11,95,191,.06);"><div style="font-size:12px;font-weight:700;color:var(--p2);">D+7 Đợt 1</div><div style="font-size:10px;color:var(--p2);margin-top:2px;">(07/07)</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li><span class="cc-badge cb-p1">P1 D+7</span> Pull BAN vs CTRL · Inc.KH ≥ 156? Nếu ≥ → tiếp tục · nếu &lt; 78 → dừng review</li>
+          <li><span class="cc-badge cb-p2">P2 D+7</span> Pull BAN vs CTRL · Inc.KH ≥ 15? Nếu âm → dừng P2 rolling, đưa pool sang Ads exclusion</li>
+          <li><span class="cc-badge cb-p3">P3 D+7</span> So sánh AOV_BAN vs AOV_CTRL · nếu delta &lt; 5k → pause P3, review mẫu combo</li>
+          <li>Ghi kết quả D+7 vào tracking sheet · quyết định giữ / điều chỉnh trước Đợt 4 (16/07)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 15/07 → 16/07 Đợt 4 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">15/07 T5</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">16/07 T5</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 4 · <b>11,698 KH</b></div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Cập nhật mẫu dựa trên feedback D+7 nếu có · duyệt nội dung Đợt 4</li>
+          <li>Nếu P2 đã dừng → giảm pool queue Đợt 4 (bỏ P2)</li>
+          <li>P3: nếu AOV tốt → giữ mẫu · nếu không → thử mẫu combo khác giá trị cao hơn</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 17/07 D+7 check Đợt 2 -->
+    <div class="cc-row">
+      <div class="cc-cell prep" style="border-left:3px solid var(--p2);"><div class="cc-date-prep" style="color:var(--p2)">17/07 T6</div><div style="font-size:10px;color:var(--p2);margin-top:2px;font-weight:700;">📊 CHECK GATE</div></div>
+      <div class="cc-cell send" style="background:rgba(11,95,191,.06);"><div style="font-size:12px;font-weight:700;color:var(--p2);">D+7 Đợt 2</div><div style="font-size:10px;color:var(--p2);margin-top:2px;">(10/07)</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Confirm trend P1/P2 so với kết quả D+7 Đợt 1 · xem có nhất quán không</li>
+          <li>AOV P3 Đợt 2 vs Đợt 1 · xác nhận mẫu combo nào perform tốt hơn</li>
+          <li>Chuẩn bị nội dung Đợt 5 (19/07) — cập nhật D-1</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 18/07 → 19/07 Đợt 5 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">18/07 T7</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">19/07 CN</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 5 · <b>11,698 KH</b> · cuối T2</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Duyệt mẫu Đợt 5 · chú ý CN — nếu hệ thống SMS giảm throughput cuối tuần, queue trước thứ 7</li>
+          <li>Nhắc nhở: 21/07 (T3) là D+14 Đợt 1 — chuẩn bị báo cáo chính thức</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TUẦN 3 header -->
+    <div class="cc-row" style="display:block;"><div class="cc-section-hdr">TUẦN 3 · 21 – 27/07 — Batch 6, 7 + D+14 chính thức</div></div>
+
+    <!-- 21/07 D+14 Đợt 1 + prep Đợt 6 -->
+    <div class="cc-row">
+      <div class="cc-cell prep" style="border-left:3px solid var(--p1);"><div class="cc-date-prep" style="color:var(--p1)">21/07 T3</div><div style="font-size:10px;color:var(--p1);margin-top:2px;font-weight:700;">📊 D+14 Đợt 1</div></div>
+      <div class="cc-cell send" style="background:rgba(26,107,51,.06);"><div style="font-size:12px;font-weight:700;color:var(--p1);">D+14 (07/07)</div><div style="font-size:10px;color:var(--p1);margin-top:2px;">+ Prep Đợt 6</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li><span class="cc-badge cb-p1">P1 D+14</span> Inc.KH chính thức vs target +313 · quyết định có mở thêm pool / re-send không</li>
+          <li><span class="cc-badge cb-p2">P2 D+14</span> Inc.KH vs target +30 · nếu dương và &gt; 15 → có thể mở pool F3-5×R25-36W</li>
+          <li>Nếu re-send P1: đổi mẫu content hoàn toàn · CTRL riêng cho re-send batch</li>
+          <li>Đồng thời duyệt mẫu Đợt 6 (bắn 22/07 T4 — D-1 hôm nay)</li>
+        </ul>
+        <div class="msg-box">P1 re-send (nếu có): "[Tên] — tháng này 30Shine có dịch vụ mới, anh thử ghé xem nhé? [tên salon] đang có slot chiều này."</div>
+      </div>
+    </div>
+
+    <!-- 22/07 Đợt 6 (không có cc-row riêng prep vì 21/07 đã làm) -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep" style="color:var(--muted);font-size:11px;">(21/07 — xem trên)</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">22/07 T4</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 6 · <b>11,698 KH</b></div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Queue Đợt 6 · nội dung đã duyệt từ hôm qua (21/07)</li>
+          <li>Xem open-rate rolling các đợt trước · nếu có mẫu perform kém → loại bỏ</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 24/07 D+14 Đợt 2 + prep Đợt 7 -->
+    <div class="cc-row">
+      <div class="cc-cell prep" style="border-left:3px solid var(--p1);"><div class="cc-date-prep" style="color:var(--p1)">24/07 T6</div><div style="font-size:10px;color:var(--p1);margin-top:2px;font-weight:700;">📊 D+14 Đợt 2 + Prep</div></div>
+      <div class="cc-cell send" style="background:rgba(26,107,51,.06);"><div style="font-size:12px;font-weight:700;color:var(--p1);">D+14 (10/07)</div><div style="font-size:10px;color:var(--p1);margin-top:2px;">+ Prep Đợt 7</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>D+14 Đợt 2 (10/07) + D+7 Đợt 4 (16/07) — so sánh consistency của kết quả</li>
+          <li>Tổng hợp 4 đợt đầu: mẫu nào có read rate cao nhất → giữ làm best-performer</li>
+          <li>Duyệt mẫu Đợt 7 (bắn 25/07 T7 — D-1 hôm nay)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 25/07 Đợt 7 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep" style="color:var(--muted);font-size:11px;">(24/07 — xem trên)</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">25/07 T7</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Đợt 7 · <b>11,698 KH</b> · cuối T3</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Queue Đợt 7 · chú ý T7 — đảm bảo platform SMS xử lý trong ngày</li>
+          <li>Nhắc nhở: 27/07 (T2) chuẩn bị content Đợt 8 (bắn 28/07)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TUẦN 4 header -->
+    <div class="cc-row" style="display:block;"><div class="cc-section-hdr">TUẦN 4 · 28 – 31/07 — Batch 8 cuối + chuẩn bị tổng kết</div></div>
+
+    <!-- 27/07 → 28/07 Đợt 8 -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">27/07 T2</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Deadline chuẩn bị</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">28/07 T3</div><div style="font-size:10px;color:var(--navy);margin-top:2px;font-weight:700;">Đợt 8 cuối · <b>11,702 KH</b></div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Duyệt mẫu Đợt 8 · dùng best-performer đã xác định từ các đợt trước</li>
+          <li><span class="cc-badge cb-p1">P1</span> Nếu có re-send pool (chưa về sau D+14): đổi mẫu hoàn toàn · CTRL riêng</li>
+          <li>Chuẩn bị báo cáo tổng kết: template cho 11/08 (D+14 Đợt 8)</li>
+          <li>Tổng hợp read rate + uplift toàn bộ 8 đợt → chọn top 3 mẫu đưa vào thư viện T8</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 11/08 tổng kết -->
+    <div class="cc-row">
+      <div class="cc-cell prep"><div class="cc-date-prep">10/08 T2</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Chuẩn bị báo cáo</div></div>
+      <div class="cc-cell send"><div class="cc-date-send">11/08 T3</div><div style="font-size:10px;color:var(--navy);margin-top:2px;font-weight:700;">D+14 Đợt 8 · Tổng kết T7</div></div>
+      <div class="cc-cell">
+        <ul class="cc-tasks">
+          <li>Tổng Inc.KH thực tế vs target +343 · LNG net thực tế vs +144M target</li>
+          <li>AOV P3 BAN vs CTRL (8 đợt) · AOV P4 salon có training vs CTRL</li>
+          <li>Top 3 mẫu content win T7 → đưa vào thư viện template T8</li>
+          <li>Segment nào fail (Inc.KH âm hoặc AOV không tăng) → blacklist T8</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Content guide per program -->
+  <div class="cc-guide-grid">
+    <div class="cg-box" style="background:var(--p1b);border:1px solid rgba(26,107,51,.2);">
+      <div class="cg-label" style="color:var(--p1)">P1 — GIỮ NHỊP · Content guide</div>
+      <div class="cg-list" style="color:var(--p1l);">
+        ✅ Nhắc nhịp cắt cá nhân hoá — token [Tên] + [X] tuần + [tên salon]<br>
+        ✅ Ngắn (&lt;160 ký tự), thân thiện, không ép<br>
+        ✅ F1 lần 2: thêm "20k lần này" nếu chưa về lần 2<br>
+        ❌ Không đề cập KM với F2/F3-5 — thắng mà không cần<br>
+        ❌ Không gửi lại cùng mẫu D+14 — đổi mẫu hoàn toàn
+      </div>
+      <div class="msg-box">"[Tên] ơi — đã [X] tuần rồi nhỉ. Ghé 30Shine [tên salon] khi tiện nhé!"</div>
+    </div>
+    <div class="cg-box" style="background:var(--p2b);border:1px solid rgba(11,95,191,.2);">
+      <div class="cg-label" style="color:var(--p2)">P2 — KÉO VỀ · Content guide</div>
+      <div class="cg-list" style="color:var(--p2l);">
+        ✅ "Lâu rồi chưa gặp" + offer 30k cụ thể<br>
+        ✅ Nhắc salon gần nhất họ từng đến (Last_Salon_ID)<br>
+        ✅ "Lần này là lần thứ [F+1]" nếu F=3-5<br>
+        ❌ Không retry trước D+14<br>
+        ❌ Không dùng 30k nếu KH ở NQ (leak phá GP)
+      </div>
+      <div class="msg-box">"Anh [Tên] ơi — lâu quá chưa gặp! Ghé [salon] tháng này anh nhé, có 30k off riêng."</div>
+    </div>
+    <div class="cg-box" style="background:var(--p3b);border:1px solid rgba(138,90,0,.2);">
+      <div class="cg-label" style="color:var(--p3)">P3 — ĐẨY AOV · Content guide</div>
+      <div class="cg-list" style="color:var(--p3l);">
+        ✅ Giới thiệu combo/dịch vụ cụ thể, không generic<br>
+        ✅ "Combo [tên gói] giảm 20k khi book tại CTY"<br>
+        ✅ Thumbnail dịch vụ nếu qua Zalo OA<br>
+        ❌ Không nói "come back" — KPI là AOV, không phải headcount<br>
+        ❌ 20k chỉ áp combo ≥300k, không áp dịch vụ lẻ
+      </div>
+      <div class="msg-box">"Anh [Tên] — ghé [salon] thử combo [tên gói] tháng này nhé, đang ưu đãi 20k khi book trước."</div>
+    </div>
+    <div class="cg-box" style="background:var(--p4b);border:1px solid rgba(91,62,138,.2);">
+      <div class="cg-label" style="color:var(--p4)">P4 — ĐẨY AOV TẠI GHẾ · Không SMS</div>
+      <div class="cg-list" style="color:var(--p4l);">
+        ✅ Stylist gợi ý combo/dịch vụ nâng cấp khi đang cắt<br>
+        ✅ Menu dịch vụ giá trị cao đặt tại điểm chờ / quầy<br>
+        ✅ App banner combo hiển thị khi F≥11 book appointment<br>
+        ✅ Đo AOV per-salon (có training vs chưa training = CTRL)<br>
+        ❌ Tuyệt đối KHÔNG SMS — T4 xác nhận SMS −1.13pp, −51M<br>
+        ❌ Không giảm giá cash — combo/nâng cấp dịch vụ, giữ margin
+      </div>
+      <div class="msg-box">Kịch bản tại ghế: "Anh đang cắt kiểu này, nếu thêm [dịch vụ X] 15 phút nữa tóc sẽ giữ nếp lâu hơn — anh thử không?"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<div class="foot">
+  <b>Đo lường:</b> Inc.KH = BAN × (return_rate_BAN − return_rate_CTRL). CTRL 10% stratified by F×Loai(CTY/NQ), random_state=42. Cửa sổ đo: D+7 (go/no-go) + D+14 (chính thức). AOV đo = avg chi_tieu per returning bill trong cửa sổ. CP KM = số KH thực tế dùng voucher × mệnh giá (CT-gated = tại salon CTY). LNG = DT×45% − CP_SMS − CP_KM_thực_tế. Không tính gross return vào Inc.KH. &nbsp;·&nbsp; <b>CP SMS:</b> 300đ/SMS (cập nhật 06/07/2026). &nbsp;·&nbsp; <b>Nguồn data:</b> DB_Kh_Quaylai_T3_Den_040726.csv · DanhSach_Bawn_CRM_T7_cusID.csv (522K rows) · BaoCao_CRM_T6_2026.xlsx · MaTran_Base_MucTieu_T7.html &nbsp;·&nbsp; <b>Phiên bản:</b> Final · 06/07/2026
+</div>
+
+</div>
+</div>
+
+<!-- ══ CHECKLIST ═══════════════════════════════════════════════ -->
+<div id="view-cl" style="display:none;">
+<!-- ══ HEADER ══════════════════════════════════════════════════════════════ -->
+<header class="hdr">
+  <div>
+    <div class="hdr-title">CHECK LEAD · CRM T7</div>
+    <div class="hdr-sub">Project: Hải Nguyễn · 07–28/07/2026</div>
+  </div>
+  <div class="hdr-stats">
+    <div class="hdr-stat">
+      <div class="hdr-stat-lbl">Target LNG</div>
+      <div class="hdr-stat-val">+169M</div>
+    </div>
+    <div class="hdr-stat">
+      <div class="hdr-stat-lbl">Đợt bắn</div>
+      <div class="hdr-stat-val">8 đợt</div>
+    </div>
+    <div class="hdr-stat">
+      <div class="hdr-stat-lbl">BAN SMS</div>
+      <div class="hdr-stat-val">108,955</div>
+    </div>
+    <div class="hdr-stat">
+      <div class="hdr-stat-lbl">Nhịp</div>
+      <div class="hdr-stat-val">3 ngày</div>
+    </div>
+  </div>
+  <div class="hdr-prog">
+    <div class="hdr-prog-row">
+      <span class="hdr-prog-lbl">Tiến độ checklist</span>
+      <span class="hdr-prog-pct" id="gl-pct">0 / 0</span>
+    </div>
+    <div class="hdr-prog-bar"><div class="hdr-prog-fill" id="gl-fill"></div></div>
+  </div>
+  <button class="btn-reset" onclick="resetAll()">Reset tất cả</button>
+</header>
+
+<!-- ══ BODY ════════════════════════════════════════════════════════════════ -->
+<main class="page">
+
+  <!-- BATCH OVERVIEW -->
+  <div class="batch-track" id="batch-track">
+    <div class="bt-lbl">Tiến độ 8 đợt bắn</div>
+    <div class="bt-dots" id="bt-dots">
+      <div class="bt-dot" data-dot="1" onclick="toggleDot(1)">
+        <div class="bt-circle">1</div>
+        <div class="bt-date">07/07 T3</div>
+      </div>
+      <div class="bt-dot" data-dot="2" onclick="toggleDot(2)">
+        <div class="bt-circle">2</div>
+        <div class="bt-date">10/07 T6</div>
+      </div>
+      <div class="bt-dot" data-dot="3" onclick="toggleDot(3)">
+        <div class="bt-circle">3</div>
+        <div class="bt-date">13/07 T2</div>
+      </div>
+      <div class="bt-dot" data-dot="4" onclick="toggleDot(4)">
+        <div class="bt-circle">4</div>
+        <div class="bt-date">16/07 T5</div>
+      </div>
+      <div class="bt-dot" data-dot="5" onclick="toggleDot(5)">
+        <div class="bt-circle">5</div>
+        <div class="bt-date">19/07 CN</div>
+      </div>
+      <div class="bt-dot" data-dot="6" onclick="toggleDot(6)">
+        <div class="bt-circle">6</div>
+        <div class="bt-date">22/07 T4</div>
+      </div>
+      <div class="bt-dot" data-dot="7" onclick="toggleDot(7)">
+        <div class="bt-circle">7</div>
+        <div class="bt-date">25/07 T7</div>
+      </div>
+      <div class="bt-dot" data-dot="8" onclick="toggleDot(8)">
+        <div class="bt-circle">8</div>
+        <div class="bt-date">28/07 T3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PRE-CAMPAIGN ─────────────────────────────── -->
+  <section class="wk" id="wk-pre">
+    <div class="wk-hdr">
+      <span class="wk-eyebrow">Trước chiến dịch</span>
+      <span class="wk-name">CHUẨN BỊ</span>
+      <span class="wk-range">06/07 (T2)</span>
+      <div class="wk-meta">
+        <div class="wk-prog-wrap">
+          <div class="wk-prog-bar"><div class="wk-prog-fill" id="prog-pre"></div></div>
+          <span class="wk-prog-txt" id="txt-pre">0/0</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-list">
+      <div class="dc pre">
+        <div class="dc-date"><div class="dc-dd">06</div><div class="dc-mm">07</div><div class="dc-day">T2</div></div>
+        <div class="dc-body">
+          <div class="dc-top">
+            <span class="tbadge pre">Duyệt toàn bộ</span>
+            <span class="dc-title">Full duyệt trước đợt 1 — tất cả 15 tệp</span>
+          </div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="pre-1"><span class="ti-txt"><span class="pt p1">P1</span> Duyệt mẫu SMS P1 — nhắc nhịp cắt, F1 lần 2 (20k gate), F2-F3-5 (0đ)</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-2"><span class="ti-txt"><span class="pt p2">P2</span> Duyệt mẫu SMS P2 — "lâu rồi chưa gặp" + 30k CT-gated, xác nhận gate CTY</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-3"><span class="ti-txt"><span class="pt p3">P3</span> Duyệt mẫu SMS P3 — combo/gói dịch vụ cao, 20k gate khi book combo ≥300k</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-4"><span class="ti-txt"><span class="pt p4">P4</span> Kiểm tra training script upsell tại ghế · menu combo hiển thị đúng salon</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-5"><span class="ti-txt"><span class="pt all">ALL</span> Set CTRL 10% stratified F×R per segment, random_state=42 — không gộp CTRL chung</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-6"><span class="ti-txt"><span class="pt all">ALL</span> Dedup pool vs T6 — loại cusID đã bắn ≤14 ngày</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-7"><span class="ti-txt">Xác nhận file bắn P1 — 36,844 KH có phone (33,525 sau lọc NoPhone)</span></li>
+            <li class="ti"><input type="checkbox" data-id="pre-8"><span class="ti-txt">Kiểm tra queue SMS platform — confirm throughput ổn định trước 07/07</span></li>
+          </ul>
+          <div class="dc-note pre">Không bắn trước khi đủ tất cả 8 mục trên ✓</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TUẦN 1 ─────────────────────────────────────── -->
+  <section class="wk" id="wk-1">
+    <div class="wk-hdr">
+      <span class="wk-eyebrow">Tuần 1</span>
+      <span class="wk-name">KHỞI ĐỘNG</span>
+      <span class="wk-range">07 – 13/07</span>
+      <div class="wk-meta">
+        <span class="wk-batches">Đợt 1 · 2 · 3</span>
+        <div class="wk-prog-wrap">
+          <div class="wk-prog-bar"><div class="wk-prog-fill" id="prog-1"></div></div>
+          <span class="wk-prog-txt" id="txt-1">0/0</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-list">
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">07</div><div class="dc-mm">07</div><div class="dc-day">T3</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 1</span><span class="dc-title">P1 + P2 + P3 — Khai màn chiến dịch</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w1-1"><span class="ti-txt">Queue SMS P1/P2/P3 đúng giờ — confirm số lượng khớp tệp</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-2"><span class="ti-txt">Xác nhận delivery receipt trong ngày — ghi lại số gửi thành công thực tế</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-3"><span class="ti-txt"><span class="pt p4">P4</span> Nhắc salon team: ngày 1 upsell tại ghế theo script đã duyệt</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc duyet">
+        <div class="dc-date"><div class="dc-dd">09</div><div class="dc-mm">07</div><div class="dc-day">T5</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge duyet">Chuẩn bị Đợt 2</span><span class="dc-title">D+3 check Đợt 1 · Duyệt mẫu Đợt 2</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w1-4"><span class="ti-txt">Xem D+3 open-rate Đợt 1 — nếu &lt;45% → điều chỉnh sapo trước khi queue Đợt 2</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-5"><span class="ti-txt">Duyệt mẫu Đợt 2 (giữ nguyên nếu chưa có feedback điều chỉnh)</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-6"><span class="ti-txt">Chuẩn bị CTRL riêng Đợt 2 — không gộp CTRL với Đợt 1</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">10</div><div class="dc-mm">07</div><div class="dc-day">T6</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 2</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w1-7"><span class="ti-txt">Queue SMS Đợt 2 — mẫu đã duyệt 09/07</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-8"><span class="ti-txt">Xác nhận delivery receipt Đợt 2</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc duyet">
+        <div class="dc-date"><div class="dc-dd">12</div><div class="dc-mm">07</div><div class="dc-day">CN</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge duyet">Chuẩn bị Đợt 3</span><span class="dc-title">D-1 trước 13/07</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w1-9"><span class="ti-txt">Chuẩn bị content Đợt 3 — nếu có combo/event mới → cập nhật mẫu P3</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-10"><span class="ti-txt">Nhắc team: ngày mai 13/07 bắn Đợt 3 · ngày 14/07 = D+7 Đợt 1 — chuẩn bị pull data</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">13</div><div class="dc-mm">07</div><div class="dc-day">T2</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 3</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w1-11"><span class="ti-txt">Queue SMS Đợt 3 — mẫu đã duyệt 12/07</span></li>
+            <li class="ti"><input type="checkbox" data-id="w1-12"><span class="ti-txt">Xác nhận delivery · remind data team: pull D+7 Đợt 1 sáng mai (14/07)</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TUẦN 2 ─────────────────────────────────────── -->
+  <section class="wk" id="wk-2">
+    <div class="wk-hdr">
+      <span class="wk-eyebrow">Tuần 2</span>
+      <span class="wk-name">GATE D+7</span>
+      <span class="wk-range">14 – 20/07</span>
+      <div class="wk-meta">
+        <span class="wk-batches">Đợt 4 · 5 + D+7 check Đợt 1 &amp; 2</span>
+        <div class="wk-prog-wrap">
+          <div class="wk-prog-bar"><div class="wk-prog-fill" id="prog-2"></div></div>
+          <span class="wk-prog-txt" id="txt-2">0/0</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-list">
+
+      <div class="dc check">
+        <div class="dc-date"><div class="dc-dd">14</div><div class="dc-mm">07</div><div class="dc-day">T3</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge check">Check D+7 · Đợt 1</span><span class="dc-title">Go / No-Go trước Đợt 4</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w2-1"><span class="ti-txt"><span class="pt p1">P1</span> Pull BAN vs CTRL · Inc.KH ≥ 156 → tiếp tục · &lt;78 → dừng rolling, review segment</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-2"><span class="ti-txt"><span class="pt p2">P2</span> Pull BAN vs CTRL · Inc.KH ≥ 15 → tiếp tục · âm → dừng P2, đưa pool sang Ads exclusion</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-3"><span class="ti-txt"><span class="pt p3">P3</span> So sánh AOV_BAN vs AOV_CTRL · delta &lt;5k → pause P3, review mẫu combo</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-4"><span class="ti-txt">Ghi kết quả D+7 vào tracking sheet · quyết định giữ / điều chỉnh trước Đợt 4 (16/07)</span></li>
+          </ul>
+          <div class="dc-note check">Quyết định phải có trước 15/07 để kịp điều chỉnh Đợt 4</div>
+        </div>
+      </div>
+
+      <div class="dc duyet">
+        <div class="dc-date"><div class="dc-dd">15</div><div class="dc-mm">07</div><div class="dc-day">T4</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge duyet">Duyệt Đợt 4</span><span class="dc-title">D-1 trước 16/07 — cập nhật theo kết quả D+7</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w2-5"><span class="ti-txt">Cập nhật mẫu content dựa trên feedback D+7 Đợt 1 (nếu cần đổi hook/sapo)</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-6"><span class="ti-txt">Nếu P2 đã dừng → bỏ P2 khỏi queue Đợt 4 · điều chỉnh số lượng bắn</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-7"><span class="ti-txt">Chuẩn bị CTRL riêng Đợt 4 · duyệt tệp bắn xong trước 17h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">16</div><div class="dc-mm">07</div><div class="dc-day">T5</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 4</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w2-8"><span class="ti-txt">Queue SMS Đợt 4 — mẫu đã duyệt 15/07</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-9"><span class="ti-txt">Xác nhận delivery receipt Đợt 4</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc check">
+        <div class="dc-date"><div class="dc-dd">18</div><div class="dc-mm">07</div><div class="dc-day">T7</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge check">Check D+7 · Đợt 2</span><span class="tbadge duyet">Chuẩn bị Đợt 5</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w2-10"><span class="ti-txt">D+7 Đợt 2 (10/07) — confirm trend P1/P2 nhất quán với kết quả Đợt 1</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-11"><span class="ti-txt"><span class="pt p3">P3</span> So sánh AOV P3 Đợt 2 vs Đợt 1 · xác nhận mẫu combo nào perform tốt hơn</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-12"><span class="ti-txt">Duyệt mẫu Đợt 5 (19/07) — chú ý CN: nếu platform giảm throughput → queue trước T7</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">19</div><div class="dc-mm">07</div><div class="dc-day">CN</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 5</span><span class="dc-title">Chú ý throughput CN</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w2-13"><span class="ti-txt">Queue SMS Đợt 5 — verify đã queue từ T7 nếu platform cuối tuần chậm</span></li>
+            <li class="ti"><input type="checkbox" data-id="w2-14"><span class="ti-txt">Xác nhận delivery receipt Đợt 5 · ghi nhận bất thường platform nếu có</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TUẦN 3 ─────────────────────────────────────── -->
+  <section class="wk" id="wk-3">
+    <div class="wk-hdr">
+      <span class="wk-eyebrow">Tuần 3</span>
+      <span class="wk-name">BÁO CÁO D+14</span>
+      <span class="wk-range">21 – 27/07</span>
+      <div class="wk-meta">
+        <span class="wk-batches">Đợt 6 · 7 + D+14 chính thức</span>
+        <div class="wk-prog-wrap">
+          <div class="wk-prog-bar"><div class="wk-prog-fill" id="prog-3"></div></div>
+          <span class="wk-prog-txt" id="txt-3">0/0</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-list">
+
+      <div class="dc baocao">
+        <div class="dc-date"><div class="dc-dd">21</div><div class="dc-mm">07</div><div class="dc-day">T3</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge baocao">Báo cáo D+14 · Đợt 1</span><span class="tbadge duyet">Duyệt Đợt 6</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w3-1"><span class="ti-txt"><span class="pt p1">P1</span> Inc.KH D+14 ≥ 250 → tiếp tục scale · 150–250 → A/B mẫu content mới T3 · &lt;150 → dừng</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-2"><span class="ti-txt"><span class="pt p2">P2</span> Inc.KH ≥ 36 → LNG dương, scale T8 · 27–35 → bỏ KM 30k · &lt;27 hoặc âm → dừng</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-3"><span class="ti-txt"><span class="pt p3">P3</span> AOV_BAN ≥ +43% → hòa vốn+, scale T8 · +20–42% → chuyển kênh app · ≈CTRL → dừng SMS</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-4"><span class="ti-txt">Ghi quyết định scale / điều chỉnh / dừng từng program vào tracking sheet chính thức</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-5"><span class="ti-txt">Đồng thời duyệt mẫu Đợt 6 (bắn 22/07) — điều chỉnh theo kết quả D+14 nếu cần</span></li>
+          </ul>
+          <div class="dc-note baocao">Đây là checkpoint quan trọng nhất — quyết định hướng T8</div>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">22</div><div class="dc-mm">07</div><div class="dc-day">T4</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 6</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w3-6"><span class="ti-txt">Queue SMS Đợt 6 — nội dung đã duyệt từ hôm qua (21/07)</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-7"><span class="ti-txt">Xác nhận delivery receipt Đợt 6</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc check">
+        <div class="dc-date"><div class="dc-dd">23</div><div class="dc-mm">07</div><div class="dc-day">T5</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge check">Check D+14 · Đợt 2 + D+7 · Đợt 4</span><span class="tbadge duyet">Duyệt Đợt 7</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w3-8"><span class="ti-txt">D+14 Đợt 2 (10/07) + D+7 Đợt 4 (16/07) — so sánh consistency của kết quả</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-9"><span class="ti-txt">Ghi nhận pattern: kết quả có nhất quán với D+14 Đợt 1 không? Flag bất thường.</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-10"><span class="ti-txt">Duyệt mẫu Đợt 7 (bắn 25/07 T7) — dùng best-performer xác định từ Đợt 1–4</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">25</div><div class="dc-mm">07</div><div class="dc-day">T7</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 7</span><span class="dc-title">Chú ý throughput T7</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w3-11"><span class="ti-txt">Queue SMS Đợt 7 — đảm bảo platform xử lý trong ngày T7</span></li>
+            <li class="ti"><input type="checkbox" data-id="w3-12"><span class="ti-txt">Xác nhận delivery receipt Đợt 7 · Nhắc team: 27/07 (T2) duyệt Đợt 8</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TUẦN 4 ─────────────────────────────────────── -->
+  <section class="wk" id="wk-4">
+    <div class="wk-hdr">
+      <span class="wk-eyebrow">Tuần 4</span>
+      <span class="wk-name">KẾT THÚC</span>
+      <span class="wk-range">28 – 31/07</span>
+      <div class="wk-meta">
+        <span class="wk-batches">Đợt 8 (final) + Tổng kết</span>
+        <div class="wk-prog-wrap">
+          <div class="wk-prog-bar"><div class="wk-prog-fill" id="prog-4"></div></div>
+          <span class="wk-prog-txt" id="txt-4">0/0</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-list">
+
+      <div class="dc duyet">
+        <div class="dc-date"><div class="dc-dd">27</div><div class="dc-mm">07</div><div class="dc-day">T2</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge duyet">Duyệt Đợt 8 (D-1)</span><span class="dc-title">Final batch prep + báo cáo tổng kết</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w4-1"><span class="ti-txt">Duyệt mẫu Đợt 8 — dùng best-performer đã xác định từ các đợt trước (không thử mẫu mới)</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-2"><span class="ti-txt">Chuẩn bị template báo cáo tổng kết T7 — D+14 Đợt 8 sẽ vào ngày 11/08</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-3"><span class="ti-txt">Compile sơ bộ kết quả T7: Inc.KH P1/P2 confirmed, AOV P3/P4 actual vs target</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc ban">
+        <div class="dc-date"><div class="dc-dd">28</div><div class="dc-mm">07</div><div class="dc-day">T3</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge ban">Bắn Đợt 8 — FINAL</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w4-4"><span class="ti-txt">Queue SMS Đợt 8 — last batch, xác nhận số lượng lần cuối</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-5"><span class="ti-txt">Xác nhận delivery receipt Đợt 8 · Lưu số liệu final vào tracking</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc check">
+        <div class="dc-date"><div class="dc-dd">29</div><div class="dc-mm">07</div><div class="dc-day">T4</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge check">Check D+7 · Đợt 7 + D+14 · Đợt 6</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w4-6"><span class="ti-txt">D+7 Đợt 7 (25/07) — pull kết quả, so sánh vs target</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-7"><span class="ti-txt">D+14 Đợt 6 (22/07) — pull kết quả chính thức Đợt 6</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dc baocao">
+        <div class="dc-date"><div class="dc-dd">31</div><div class="dc-mm">07</div><div class="dc-day">T6</div></div>
+        <div class="dc-body">
+          <div class="dc-top"><span class="tbadge baocao">Tổng kết tháng 7</span></div>
+          <ul class="tasks">
+            <li class="ti"><input type="checkbox" data-id="w4-8"><span class="ti-txt">Tổng hợp Inc.KH thực tế P1/P2 toàn chiến dịch · so vs target +395 KH</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-9"><span class="ti-txt">Tổng hợp AOV delta P3/P4 · so vs target P3 +20%, P4 +5%</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-10"><span class="ti-txt">Tính LNG thực tế: DT_tăng × 45% − CP_SMS − CP_KM_thực_tế · so vs +169M target</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-11"><span class="ti-txt">Quyết định T8: program nào scale · program nào dừng · program nào cần redesign</span></li>
+            <li class="ti"><input type="checkbox" data-id="w4-12"><span class="ti-txt">Lưu kết quả vào database T7 để làm evidence baseline cho T8</span></li>
+          </ul>
+          <div class="dc-note duyet">D+14 Đợt 8 sẽ vào 11/08 — báo cáo đầy đủ nhất sau ngày đó</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function() {
+  const STORE_KEY = 'crm_t7_checklist';
+  const DOT_KEY   = 'crm_t7_dots';
+
+  // ── LOAD / SAVE ──────────────────────────────────────
+  function load() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); }
+    catch(e) { return {}; }
+  }
+  function loadDots() {
+    try { return JSON.parse(localStorage.getItem(DOT_KEY) || '{}'); }
+    catch(e) { return {}; }
+  }
+  function save(state) { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+  function saveDots(state) { localStorage.setItem(DOT_KEY, JSON.stringify(state)); }
+
+  // ── INIT CHECKBOXES ──────────────────────────────────
+  const state = load();
+  const allBoxes = document.querySelectorAll('.ti input[type="checkbox"]');
+  allBoxes.forEach(function(cb) {
+    var id = cb.dataset.id;
+    if (state[id]) {
+      cb.checked = true;
+      cb.closest('.ti').classList.add('done');
+    }
+    cb.addEventListener('change', function() {
+      var li = cb.closest('.ti');
+      if (cb.checked) { li.classList.add('done'); state[id] = true; }
+      else { li.classList.remove('done'); delete state[id]; }
+      save(state);
+      updateAll();
+    });
+  });
+
+  // ── INIT DOTS ────────────────────────────────────────
+  var dotsState = loadDots();
+  for (var d = 1; d <= 8; d++) {
+    if (dotsState['dot_'+d]) {
+      var el = document.querySelector('[data-dot="'+d+'"]');
+      if (el) el.classList.add('fired');
+    }
+  }
+
+  window.toggleDot = function(n) {
+    var el = document.querySelector('[data-dot="'+n+'"]');
+    if (!el) return;
+    if (el.classList.contains('fired')) { el.classList.remove('fired'); delete dotsState['dot_'+n]; }
+    else { el.classList.add('fired'); dotsState['dot_'+n] = true; }
+    saveDots(dotsState);
+  };
+
+  // ── PROGRESS ─────────────────────────────────────────
+  var weekMap = {
+    'pre': ['pre-1','pre-2','pre-3','pre-4','pre-5','pre-6','pre-7','pre-8'],
+    '1':   ['w1-1','w1-2','w1-3','w1-4','w1-5','w1-6','w1-7','w1-8','w1-9','w1-10','w1-11','w1-12'],
+    '2':   ['w2-1','w2-2','w2-3','w2-4','w2-5','w2-6','w2-7','w2-8','w2-9','w2-10','w2-11','w2-12','w2-13','w2-14'],
+    '3':   ['w3-1','w3-2','w3-3','w3-4','w3-5','w3-6','w3-7','w3-8','w3-9','w3-10','w3-11','w3-12'],
+    '4':   ['w4-1','w4-2','w4-3','w4-4','w4-5','w4-6','w4-7','w4-8','w4-9','w4-10','w4-11','w4-12'],
+  };
+
+  function updateAll() {
+    var total = 0, done = 0;
+    for (var wk in weekMap) {
+      var ids = weekMap[wk];
+      var wDone = 0;
+      ids.forEach(function(id) { if (state[id]) wDone++; });
+      var fill = document.getElementById('prog-'+wk);
+      var txt  = document.getElementById('txt-'+wk);
+      if (fill) fill.style.width = ids.length ? (wDone/ids.length*100)+'%' : '0%';
+      if (txt)  txt.textContent = wDone+'/'+ids.length;
+      total += ids.length; done += wDone;
+    }
+    var gf = document.getElementById('gl-fill');
+    var gp = document.getElementById('gl-pct');
+    if (gf) gf.style.width = total ? (done/total*100)+'%' : '0%';
+    if (gp) gp.textContent = done+' / '+total;
+  }
+
+  updateAll();
+
+  // ── RESET ─────────────────────────────────────────────
+  window.resetAll = function() {
+    if (!confirm('Reset toàn bộ checklist?')) return;
+    localStorage.removeItem(STORE_KEY);
+    localStorage.removeItem(DOT_KEY);
+    location.reload();
+  };
+})();
+</script>
+</div>
+
+<!-- ══ CONTENT ═════════════════════════════════════════════════ -->
+<div id="view-ct" style="display:none;">
+
+
+<div class="phdr">
+  <h1>Lịch Content CRM T7 — 30Shine</h1>
+  <div class="sub">8 đợt bắn · 07–28/07/2026 · Deadline = D-1 trước mỗi đợt · 11 tệp SMS + 4 tệp tại ghế</div>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <div class="lchip"><div class="ldot" style="background:var(--p1)"></div> Duyệt mới (lần đầu)</div>
+  <div class="lchip"><div class="ldot" style="background:var(--bdr)"></div> Reuse mẫu cũ</div>
+  <div class="lchip"><div class="ldot" style="background:var(--p3)"></div> Refresh nếu cần</div>
+  <div class="lchip"><div class="ldot" style="background:var(--p2)"></div> Check gate (D+7 / D+14)</div>
+</div>
+
+<div class="tl">
+
+  <!-- ══ 06/07 → 07/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">06/07</div><div class="tl-day">Thứ 2</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">07/07 T3</div>
+      <div class="tl-dot new"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card new">
+        <div class="tl-type">Đợt 1 — Duyệt mẫu lần đầu · 20,921 KH SMS</div>
+        <div class="cl">
+          <div class="cl-group">P1 — Nhắc nhịp (6 tệp)</div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F1 × ≤8W</span> 15,312 KH · mẫu nhắc nhịp + 20k lần 2 <span class="kh">— duyệt sapo + tiêu đề + body</span></span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F1 × 9-12W</span> 6,144 KH · mẫu nhắc nhịp + 20k lần 2 <span class="kh">— test batch, duyệt riêng</span></span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F2 × ≤8W</span> 5,862 KH · mẫu giữ nhịp, không KM</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F2 × 9-12W</span> 2,125 KH · mẫu giữ nhịp, không KM</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F3-5 × ≤8W</span> 10,407 KH · mẫu đều đặn, không KM</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t1">F3-5 × 9-12W</span> 3,338 KH · mẫu đều đặn, không KM</span></div>
+          <div class="cl-group">P2 — Kéo về (1 tệp)</div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t2">F3-5 × 13-24W</span> 10,700 KH · mẫu "lâu rồi chưa gặp" + 30k offer <span class="kh">— phải có tên salon CT</span></span></div>
+          <div class="cl-group">P3 — Đẩy AOV combo (4 tệp)</div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t3">F2 × 25-48W</span> 11,539 KH · mẫu giới thiệu combo + 20k book trước</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t3">F3-5 × 25-48W</span> 13,552 KH · mẫu combo (cùng mẫu F2×25-48W)</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t3">F6-10 × 25-48W</span> 9,135 KH · mẫu combo VIP, tone quen biết hơn</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t3">F≥11 × 25-48W</span> 18,957 KH · mẫu combo VIP siêu thân</span></div>
+          <div class="cl-group">P4 — Tại ghế · 0 SMS (4 tệp)</div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t4">F6-10 × ≤8W</span> 10,959 KH · script stylist upsell tại ghế</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t4">F6-10 × 9-12W</span> 2,814 KH · script stylist upsell tại ghế</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t4">F≥11 × ≤8W</span> 53,564 KH · script VIP + app banner combo khi book</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span><span class="tef t4">F≥11 × 9-12W</span> 8,479 KH · script VIP + app banner</span></div>
+        </div>
+        <div class="note">⚠️ Set CTRL 10% per tệp trước khi queue · dedup pool đã bắn T6 · kiểm tra gate CTY cho 30k (P2) và 20k combo (P3)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 09/07 → 10/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">09/07</div><div class="tl-day">Thứ 5</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">10/07 T6</div>
+      <div class="tl-dot reuse"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card reuse">
+        <div class="tl-type">Đợt 2 — Reuse mẫu Đợt 1 · 11,698 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check"></div><span>Xem open rate Đợt 1 (07/07) · nếu &lt; 45% → điều chỉnh sapo trước khi queue</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Reuse toàn bộ 11 mẫu SMS nếu không có phản hồi điều chỉnh</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>P4 tại ghế: giữ nguyên script Đợt 1</span></div>
+        </div>
+        <div class="note">CTRL riêng Đợt 2 — không gộp với Đợt 1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 12/07 → 13/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">12/07</div><div class="tl-day">Chủ nhật</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">13/07 T2</div>
+      <div class="tl-dot reuse"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card reuse">
+        <div class="tl-type">Đợt 3 — Reuse mẫu · 11,698 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check"></div><span>Reuse 11 mẫu SMS · không đổi content chưa đủ D+7</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Nhắc nội bộ: <b>14/07</b> là D+7 Đợt 1 — chuẩn bị pull data báo cáo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 14/07 GATE ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d" style="color:var(--p2)">14/07</div><div class="tl-day">Thứ 3</div>
+      <div class="tl-dot gate"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card gate">
+        <div class="tl-type">D+7 Check — Đợt 1 (07/07)</div>
+        <div class="gate-note">
+          Đọc uplift BAN vs CTRL từng tệp → quyết định mẫu nào cần <b>refresh cho Đợt 4 (16/07):</b><br>
+          · Inc.KH tệp P1 nào âm → đổi hook sapo trước khi bắn 16/07<br>
+          · AOV P3 không có delta → thử mẫu combo khác gói cao hơn<br>
+          · P2 Inc.KH âm D+7 → dừng P2, không queue thêm
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 15/07 → 16/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">15/07</div><div class="tl-day">Thứ 5</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">16/07 T5</div>
+      <div class="tl-dot refresh"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card refresh">
+        <div class="tl-type">Đợt 4 — Refresh nếu có tín hiệu xấu từ D+7 · 11,698 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check warn"></div><span>Cập nhật mẫu tệp nào D+7 báo tín hiệu kém (theo kết quả 14/07)</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Nếu P2 đã dừng → bỏ tệp <span class="tef t2">F3-5 × 13-24W</span> khỏi queue Đợt 4</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Các tệp còn tốt → reuse mẫu cũ, không đổi</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 18/07 → 19/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">18/07</div><div class="tl-day">Thứ 7</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">19/07 CN</div>
+      <div class="tl-dot reuse"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card reuse">
+        <div class="tl-type">Đợt 5 — Reuse · 11,698 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check"></div><span>Reuse mẫu hiện tại (hoặc mẫu đã refresh Đợt 4)</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Chú ý CN — queue SMS trước Thứ 7 nếu platform giảm throughput cuối tuần</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Nhắc: <b>21/07</b> là D+14 Đợt 1 — chuẩn bị báo cáo chính thức</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 21/07 GATE + prep ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d" style="color:var(--p1)">21/07</div><div class="tl-day">Thứ 3</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">22/07 T4</div>
+      <div class="tl-dot gate"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card gate">
+        <div class="tl-type">D+14 Check Đợt 1 (07/07) + Deadline Đợt 6</div>
+        <div class="gate-note">
+          <b>Buổi sáng:</b> Đọc Inc.KH chính thức per tệp → quyết định:<br>
+          · Tệp nào win → giữ mẫu hoặc scale thêm pool<br>
+          · Tệp nào fail → đổi mẫu HOÀN TOÀN cho các đợt còn lại (rule 14 ngày)<br><br>
+          <b>Buổi chiều:</b> Duyệt mẫu mới cho Đợt 6 (bắn 22/07) nếu có refresh
+        </div>
+        <div class="cl" style="margin-top:8px;">
+          <div class="cl-row"><div class="cl-check warn"></div><span>Nếu đổi mẫu: mỗi tệp đổi hoàn toàn hook — không chỉ đổi số KM</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 24/07 → 25/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">24/07</div><div class="tl-day">Thứ 6</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">25/07 T7</div>
+      <div class="tl-dot refresh"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card refresh">
+        <div class="tl-type">Đợt 7 — Mẫu sau D+14 review · 11,698 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check warn"></div><span>Dùng mẫu đã xác nhận từ D+14 review (21/07)</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Chú ý T7 — đảm bảo SMS platform xử lý trong ngày</span></div>
+          <div class="cl-row"><div class="cl-check"></div><span>Tổng hợp read rate 4 đợt đầu → chọn best-performer cho Đợt 8</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 27/07 → 28/07 ══ -->
+  <div class="tl-item">
+    <div class="tl-date">
+      <div class="tl-d">27/07</div><div class="tl-day">Thứ 2</div>
+      <div class="tl-arrow">↓ bắn</div>
+      <div class="tl-send">28/07 T3</div>
+      <div class="tl-dot final"></div>
+    </div>
+    <div class="tl-body">
+      <div class="tl-card final">
+        <div class="tl-type">Đợt 8 — Batch cuối T7 · 11,702 KH SMS</div>
+        <div class="cl">
+          <div class="cl-row"><div class="cl-check done"></div><span>Dùng mẫu best-performer đã xác định từ các đợt trước</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span>Nếu re-send pool (KH chưa về sau D+14): <b>đổi mẫu hoàn toàn</b>, CTRL riêng</span></div>
+          <div class="cl-row"><div class="cl-check done"></div><span>Chuẩn bị template báo cáo tổng kết → dùng cho ngày <b>11/08</b> (D+14 Đợt 8)</span></div>
+        </div>
+        <div class="note">Top 3 mẫu win T7 → lưu vào thư viện template T8 · Segment nào fail → blacklist T8</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tl -->
+
+<div style="margin-top:20px;background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:14px 18px;font-size:11px;color:var(--muted);line-height:1.8;">
+  <b style="color:var(--ink);font-size:11.5px;">Quy tắc cứng về content</b><br>
+  · Không lặp sapo cùng tệp trong vòng 14 ngày · Nếu đổi mẫu: đổi hook, không chỉ đổi số KM<br>
+  · F3-5 × 13-24W và F1 (mọi R): phải có tên + địa chỉ salon CTY trong nội dung (tránh drift NQ)<br>
+  · P3 combo: chỉ áp 20k khi book combo ≥ 300k — không áp dịch vụ lẻ · P2: 30k chỉ gate CTY<br>
+  · P4: tuyệt đối không SMS — chỉ script tại ghế + app banner
+</div>
+
+</div>
+</div>
+
+<script>
+var VIEWS = ['plan','cl','ct'];
+
+function switchView(v) {
+  VIEWS.forEach(function(id) {
+    document.getElementById('view-' + id).style.display = (id === v) ? '' : 'none';
+    document.getElementById('tab-' + id).classList.toggle('active', id === v);
+  });
+  window.scrollTo(0, 0);
+  localStorage.setItem('crm_t7_view', v);
+}
+
+// Restore last view
+var last = localStorage.getItem('crm_t7_view');
+if (last && VIEWS.indexOf(last) > -1) switchView(last);
+
+// Progress pill for checklist tab
+function updateNavProg() {
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem('crm_t7_checklist') || '{}'); } catch(e) {}
+  var total = document.querySelectorAll('#view-cl .ti input[type="checkbox"]').length;
+  var done  = Object.keys(state).length;
+  var pct   = total ? Math.round(done / total * 100) : 0;
+  var pill  = document.getElementById('nav-prog');
+  if (pill) pill.textContent = pct + '%';
+}
+document.addEventListener('change', function(e) {
+  if (e.target.closest && e.target.closest('#view-cl')) updateNavProg();
+});
+updateNavProg();
+</script>
+
+</body></html>
